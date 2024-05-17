@@ -1,0 +1,278 @@
+[gd_scene load_steps=13 format=3 uid="uid://c81wq7hntgnk8"]
+
+[ext_resource type="Script" path="res://start_screen.gd" id="1_2bnr8"]
+[ext_resource type="Texture2D" uid="uid://bjiig3ejrg7no" path="res://Main_A/PointsIcon.png" id="2_elph1"]
+[ext_resource type="Script" path="res://ItemList.gd" id="2_j610g"]
+[ext_resource type="Texture2D" uid="uid://5a3vpw8jx1yd" path="res://Main_A/Total_Icon.png" id="3_47d3r"]
+[ext_resource type="Script" path="res://Button_Script.gd" id="3_nf6pf"]
+[ext_resource type="Texture2D" uid="uid://c08ceycgxgyl4" path="res://SpriteSheets_Animations/Player/Player_With_Ant.png" id="5_lgrgr"]
+[ext_resource type="Texture2D" uid="uid://d21p31mt4fa5o" path="res://SpriteSheets_Animations/Player/Player_Without_Ant.png" id="6_bsuee"]
+[ext_resource type="Texture2D" uid="uid://l7kybuo66kfl" path="res://SpriteSheets_Animations/UI_Skins/Box_Animations.png" id="8_2sydp"]
+[ext_resource type="PackedScene" uid="uid://blhs42wy46juf" path="res://animation_sc.tscn" id="9_h8j8h"]
+[ext_resource type="PackedScene" uid="uid://glxuvojwe3gi" path="res://unboxing_sistem.tscn" id="12_ipa4q"]
+[ext_resource type="Texture2D" uid="uid://dsovhtpsvtgro" path="res://Start_Menu_A/Title.png" id="124_v8e70"]
+[ext_resource type="PackedScene" uid="uid://yusxhtficre4" path="res://parallax.tscn" id="127_7vv5w"]
+
+[node name="Start_Screen" type="Node2D"]
+script = ExtResource("1_2bnr8")
+
+[node name="ItemList" type="ItemList" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 114.0
+offset_top = 184.0
+offset_right = 478.76
+offset_bottom = 526.0
+script = ExtResource("2_j610g")
+
+[node name="Button_Continue" type="Button" parent="ItemList"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 52.0
+offset_right = 238.0
+offset_bottom = 83.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Continue"
+icon_alignment = 1
+script = ExtResource("3_nf6pf")
+
+[node name="Button_Settings" type="Button" parent="ItemList"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 152.0
+offset_right = 238.0
+offset_bottom = 183.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Settings"
+script = ExtResource("3_nf6pf")
+
+[node name="Button_Quit" type="Button" parent="ItemList"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 257.0
+offset_right = 238.0
+offset_bottom = 288.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Quit"
+script = ExtResource("3_nf6pf")
+
+[node name="ItemList2" type="ItemList" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 380.0
+offset_top = 181.0
+offset_right = 749.0
+offset_bottom = 523.0
+script = ExtResource("2_j610g")
+
+[node name="Button_Play" type="Button" parent="ItemList2"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 52.0
+offset_right = 238.0
+offset_bottom = 83.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Play"
+script = ExtResource("3_nf6pf")
+
+[node name="Button_Store" type="Button" parent="ItemList2"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 155.0
+offset_right = 238.0
+offset_bottom = 186.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Store"
+script = ExtResource("3_nf6pf")
+
+[node name="Button_Return" type="Button" parent="ItemList2"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 258.0
+offset_right = 238.0
+offset_bottom = 289.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Return"
+script = ExtResource("3_nf6pf")
+
+[node name="ItemList3" type="ItemList" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 75.0
+offset_top = 150.0
+offset_right = 444.0
+offset_bottom = 623.0
+script = ExtResource("2_j610g")
+
+[node name="TotalIcon" type="Sprite2D" parent="ItemList3"]
+position = Vector2(106, 54)
+scale = Vector2(0.136, 0.136)
+texture = ExtResource("3_47d3r")
+
+[node name="PointsIcon" type="Sprite2D" parent="ItemList3/TotalIcon"]
+position = Vector2(632.353, 29.4117)
+scale = Vector2(1.10294, 1.10294)
+texture = ExtResource("2_elph1")
+
+[node name="Label" type="Label" parent="ItemList3/TotalIcon/PointsIcon"]
+offset_left = 326.667
+offset_top = -260.0
+offset_right = 366.667
+offset_bottom = -237.0
+scale = Vector2(20.53, 20.53)
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Ant" type="Button" parent="ItemList3"]
+layout_mode = 0
+offset_left = -877.0
+offset_top = -406.0
+offset_right = 1051.0
+offset_bottom = 682.0
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList3/Ant"]
+position = Vector2(960.001, 550)
+scale = Vector2(5.93, 5.93)
+texture = ExtResource("5_lgrgr")
+hframes = 7
+vframes = 7
+frame = 31
+
+[node name="No_Ant" type="Button" parent="ItemList3"]
+layout_mode = 0
+offset_left = -731.0
+offset_top = -407.0
+offset_right = 1197.0
+offset_bottom = 681.0
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(1000, 550)
+script = ExtResource("3_nf6pf")
+
+[node name="No_Ant_Image" type="Sprite2D" parent="ItemList3/No_Ant"]
+position = Vector2(980, 520)
+scale = Vector2(5.93, 5.93)
+texture = ExtResource("6_bsuee")
+hframes = 7
+vframes = 7
+frame = 31
+
+[node name="Buy_Box" type="Button" parent="ItemList3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 208.0
+offset_right = 248.0
+offset_bottom = 239.0
+scale = Vector2(2.23, 2.5)
+pivot_offset = Vector2(56, 15)
+text = "               35"
+script = ExtResource("3_nf6pf")
+
+[node name="Sprite2D" type="Sprite2D" parent="ItemList3/Buy_Box"]
+position = Vector2(21.4709, 15)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("8_2sydp")
+hframes = 6
+vframes = 6
+
+[node name="Sprite2D2" type="Sprite2D" parent="ItemList3/Buy_Box"]
+position = Vector2(62.278, 15.8)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_elph1")
+
+[node name="Button_Return2" type="Button" parent="ItemList3"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 396.0
+offset_right = 256.0
+offset_bottom = 427.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Return"
+script = ExtResource("3_nf6pf")
+
+[node name="ItemList4" type="ItemList" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 380.0
+offset_top = 181.0
+offset_right = 749.0
+offset_bottom = 523.0
+script = ExtResource("2_j610g")
+
+[node name="Button_Button" type="Button" parent="ItemList4"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 48.0
+offset_right = 238.0
+offset_bottom = 79.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Something"
+script = ExtResource("3_nf6pf")
+
+[node name="HScrollBar" type="HScrollBar" parent="ItemList4"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 156.0
+offset_right = 66.0
+offset_bottom = 164.0
+
+[node name="Button_Reset" type="Button" parent="ItemList4"]
+layout_mode = 0
+offset_left = 119.85
+offset_top = 159.0
+offset_right = 242.85
+offset_bottom = 190.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(60, 15)
+text = "Reset Progress"
+script = ExtResource("3_nf6pf")
+
+[node name="Button_Return3" type="Button" parent="ItemList4"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 277.0
+offset_right = 246.0
+offset_bottom = 308.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(65, 15)
+text = "Return"
+script = ExtResource("3_nf6pf")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(357, 64)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("124_v8e70")
+
+[node name="Parallax" parent="." instance=ExtResource("127_7vv5w")]
+position = Vector2(63, 53)
+
+[node name="Animation_SC" parent="." instance=ExtResource("9_h8j8h")]
+position = Vector2(858, 292)
+scale = Vector2(3.025, 3.025)
+
+[node name="Unboxing_Sistem" parent="." instance=ExtResource("12_ipa4q")]
+visible = false
+position = Vector2(3, 12)
+
+[connection signal="pressed" from="ItemList/Button_Continue" to="." method="_on_button_continue_pressed"]
+[connection signal="pressed" from="ItemList/Button_Settings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="ItemList/Button_Quit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="ItemList2/Button_Play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="ItemList2/Button_Store" to="." method="_on_button_store_pressed"]
+[connection signal="pressed" from="ItemList2/Button_Return" to="." method="_on_button_return_pressed"]
+[connection signal="pressed" from="ItemList3/Ant" to="." method="_on_ant_pressed"]
+[connection signal="pressed" from="ItemList3/No_Ant" to="." method="_on_no_ant_pressed"]
+[connection signal="pressed" from="ItemList3/Buy_Box" to="." method="_on_buy_box_pressed"]
+[connection signal="pressed" from="ItemList3/Button_Return2" to="." method="_on_button_return_2_pressed"]
+[connection signal="pressed" from="ItemList4/Button_Reset" to="." method="_on_button_reset_pressed"]
+[connection signal="pressed" from="ItemList4/Button_Return3" to="." method="_on_button_return_3_pressed"]
+[connection signal="hidden" from="Unboxing_Sistem" to="." method="_on_unboxing_sistem_hidden"]

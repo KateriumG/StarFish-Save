@@ -1,0 +1,136 @@
+[gd_scene load_steps=10 format=3 uid="uid://glxuvojwe3gi"]
+
+[ext_resource type="Texture2D" uid="uid://l7kybuo66kfl" path="res://SpriteSheets_Animations/UI_Skins/Box_Animations.png" id="1_67jby"]
+[ext_resource type="Script" path="res://unboxing_sistem.gd" id="1_mxlmg"]
+[ext_resource type="Texture2D" uid="uid://ccy7t70ofvd6d" path="res://SpriteSheets_Animations/UI_Skins/Skins_Animations.png" id="3_bmvi4"]
+[ext_resource type="Script" path="res://Skins.gd" id="4_qn511"]
+[ext_resource type="Script" path="res://Button_Script.gd" id="5_6mfgj"]
+
+[sub_resource type="Animation" id="Animation_r5hqx"]
+resource_name = "Idle"
+length = 0.84
+loop_mode = 1
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.12, 0.18, 0.24, 0.3, 0.36, 0.42, 0.48, 0.54, 0.6, 0.66, 0.72, 0.78, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_tf34u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pd733"]
+resource_name = "Unlock"
+length = 1.3
+step = 0.065
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.065, 0.13, 0.195, 0.26, 0.325, 0.39, 0.455, 0.52, 0.585, 0.65, 0.715, 0.78, 0.845, 0.91, 0.975, 1.04, 1.105, 1.17, 1.235, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ii1w8"]
+_data = {
+"Idle": SubResource("Animation_r5hqx"),
+"RESET": SubResource("Animation_tf34u"),
+"Unlock": SubResource("Animation_pd733")
+}
+
+[node name="Unboxing_Sistem" type="Node2D"]
+script = ExtResource("1_mxlmg")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -80.0
+offset_top = -22.0
+offset_right = -40.0
+offset_bottom = 18.0
+scale = Vector2(33.3423, 17.8925)
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(571, 267)
+scale = Vector2(2.655, 2.655)
+texture = ExtResource("1_67jby")
+hframes = 6
+vframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Box")
+libraries = {
+"": SubResource("AnimationLibrary_ii1w8")
+}
+autoplay = "Idle"
+
+[node name="Skins" type="Sprite2D" parent="."]
+position = Vector2(579, 323)
+scale = Vector2(4.02, 4.02)
+texture = ExtResource("3_bmvi4")
+offset = Vector2(0, 10)
+hframes = 7
+vframes = 7
+frame = 42
+script = ExtResource("4_qn511")
+
+[node name="Label" type="Label" parent="Skins"]
+offset_left = -36.8159
+offset_top = -57.7114
+offset_right = 37.1841
+offset_bottom = -34.7114
+text = "Repeated"
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Use_Button" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 544.0
+offset_right = 410.0
+offset_bottom = 575.0
+scale = Vector2(2.52, 2.52)
+pivot_offset = Vector2(75, 17)
+text = "Use This Costume"
+script = ExtResource("5_6mfgj")
+
+[node name="Leave_Button" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 550.0
+offset_right = 882.0
+offset_bottom = 581.0
+scale = Vector2(2.52, 2.52)
+pivot_offset = Vector2(75, 17)
+text = "Go Back"
+script = ExtResource("5_6mfgj")
+
+[connection signal="pressed" from="Buttons/Use_Button" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="Buttons/Leave_Button" to="." method="_on_leave_button_pressed"]
