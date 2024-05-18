@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwoien4grwk8u"]
+[gd_scene load_steps=12 format=3 uid="uid://cwoien4grwk8u"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_a2qby"]
 [ext_resource type="Texture2D" uid="uid://c08ceycgxgyl4" path="res://SpriteSheets_Animations/Player/Player_With_Ant.png" id="2_g62v7"]
 [ext_resource type="Texture2D" uid="uid://d21p31mt4fa5o" path="res://SpriteSheets_Animations/Player/Player_Without_Ant.png" id="3_wbukx"]
+[ext_resource type="Texture2D" uid="uid://ccy7t70ofvd6d" path="res://SpriteSheets_Animations/UI_Skins/Skins_Animations.png" id="4_o5xea"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_584s8"]
 radius = 23.8213
@@ -204,3 +205,20 @@ libraries = {
 "": SubResource("AnimationLibrary_h2jvc")
 }
 autoplay = "Idle"
+
+[node name="Hats" type="Sprite2D" parent="."]
+position = Vector2(0, -17.525)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_o5xea")
+hframes = 7
+vframes = 7
+frame = 43
+
+[node name="FaceI" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -17.525)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_o5xea")
+hframes = 7
+vframes = 7
+frame = 2

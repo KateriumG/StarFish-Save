@@ -12,6 +12,7 @@ func _ready():
 	$ItemList.show()
 	$ItemList2.show()
 	$ItemList3.show()
+	$ItemList4.show()
 	#$AnimatedSprite2D.play("Main_Loop")
 	set_process(true)
 
@@ -25,11 +26,16 @@ func _process(delta):
 				$ItemList2.shade_in(Context[1])
 				$ItemList2/Button_Play.grab_focus()
 			"ItemList3":
+				Antennae_Update()
 				$ItemList3.shade_in(Context[1])
 				$ItemList3/Ant.grab_focus()
 			"ItemList4":
 				$ItemList4.shade_in(Context[1])
 				$ItemList4/Button_Button.grab_focus()
+			"ItemList5":
+				$ItemList5.shade_in(Context[1])
+				$ItemList5/No_Hat.grab_focus()
+				Check_Hats_On()
 		
 	if Context[3] != null:
 		match Context[3]:
@@ -41,6 +47,8 @@ func _process(delta):
 				$ItemList3.shade_out(Context[3])
 			"ItemList4":
 				$ItemList4.shade_out(Context[3])
+			"ItemList5":
+				$ItemList5.shade_out(Context[3])
 
 
 func _on_button_quit_pressed():
@@ -98,11 +106,16 @@ func _on_button_reset_pressed():
 
 func _on_ant_pressed():
 	GLOBALDATA.Antennae_Using = true
+	if GLOBALDATA.Hats.has(2):
+		var repeated = GLOBALDATA.Hats.find(2)
+		GLOBALDATA.Hats[repeated] = 1
 	GLOBALDATA.save()
+	Antennae_Update()
 	
 func _on_no_ant_pressed():
 	GLOBALDATA.Antennae_Using = false
 	GLOBALDATA.save()
+	Antennae_Update()
 
 func _on_buy_box_pressed():
 	if GLOBALDATA.TotalStars >= 35:
@@ -114,3 +127,90 @@ func _on_buy_box_pressed():
 func _on_unboxing_sistem_hidden():
 	if Context[1] == "ItemList3":
 		$ItemList3/Ant.grab_focus()
+
+func _on_button_skins_pressed():
+	Context = [1, "ItemList5", 1, "ItemList3"]
+	$ItemList5.position = Start_Position
+	$ItemList5.modulate.a = 0
+	set_process(true)
+
+func _on_button_return_4_pressed():
+	Context = [1, "ItemList3", 1, "ItemList5"]
+	$ItemList4.position = Start_Position
+	$ItemList4.modulate.a = 0
+	set_process(true)
+
+func Check_Hats_On():
+	$ItemList5/No_Hat.Hat_Is_Used(0)
+	$ItemList5/Hat0.Hat_Is_Used(0)
+	$ItemList5/Hat1.Hat_Is_Used(1)
+	$ItemList5/Hat2.Hat_Is_Used(2)
+	$ItemList5/Hat3.Hat_Is_Used(3)
+	$ItemList5/Hat4.Hat_Is_Used(4)
+	$ItemList5/Hat5.Hat_Is_Used(5)
+	$ItemList5/Hat6.Hat_Is_Used(6)
+	$ItemList5/Hat7.Hat_Is_Used(7)
+	$ItemList5/Hat8.Hat_Is_Used(8)
+	$ItemList5/Hat9.Hat_Is_Used(9)
+	$ItemList5/Hat10.Hat_Is_Used(10)
+	$ItemList5/Hat11.Hat_Is_Used(11)
+
+func Antennae_Update():
+	if GLOBALDATA.Antennae_Using == true:
+		$ItemList3/Ant.modulate.a = 2
+		$ItemList3/No_Ant.modulate.a = 1
+	else:
+		$ItemList3/No_Ant.modulate.a = 2
+		$ItemList3/Ant.modulate.a = 1
+
+func _on_hat_0_pressed():
+	Get_Hat(0)
+
+func _on_hat_1_pressed():
+	Get_Hat(1)
+
+func _on_hat_2_pressed():
+	Get_Hat(2)
+
+func _on_hat_3_pressed():
+	Get_Hat(3)
+
+func _on_hat_4_pressed():
+	Get_Hat(4)
+
+func _on_no_hat_pressed():
+	if GLOBALDATA.Hats.has(2):
+		var repeated = GLOBALDATA.Hats.find(2)
+		GLOBALDATA.Hats[repeated] = 1
+	GLOBALDATA.save()
+	Check_Hats_On()
+
+func _on_hat_5_pressed():
+	Get_Hat(5)
+
+func _on_hat_6_pressed():
+	Get_Hat(6)
+
+func _on_hat_7_pressed():
+	Get_Hat(7)
+
+func _on_hat_8_pressed():
+	Get_Hat(8)
+
+func _on_hat_9_pressed():
+	Get_Hat(9)
+
+func _on_hat_10_pressed():
+	Get_Hat(10)
+
+func _on_hat_11_pressed():
+	Get_Hat(11)
+
+func Get_Hat(Hat):
+	if GLOBALDATA.Hats.has(2):
+		var repeated = GLOBALDATA.Hats.find(2)
+		GLOBALDATA.Hats[repeated] = 1
+	GLOBALDATA.Hats[Hat] = 2
+	GLOBALDATA.Antennae_Using = false
+	GLOBALDATA.save()
+	Check_Hats_On()

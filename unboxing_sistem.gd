@@ -52,26 +52,20 @@ func Unlock_Item():
 func _on_use_button_pressed():
 	if is_a_hat == 0:
 		if GLOBALDATA.Hats.has(2):
-			print(GLOBALDATA.Hats.find(2))
 			var repeated = GLOBALDATA.Hats.find(2)
 			GLOBALDATA.Hats[repeated] = 1
-			print(GLOBALDATA.Hats[repeated])
 			
 		
 		GLOBALDATA.Hats[skin_received] = 2
 	else:
 		if GLOBALDATA.FaceI.has(2):
-			print(GLOBALDATA.FaceI.find(2))
 			var repeated = GLOBALDATA.FaceI.find(2)
 			GLOBALDATA.FaceI[repeated] = 1
-			print(GLOBALDATA.FaceI[repeated])
 		
 		
 		GLOBALDATA.FaceI[skin_received] = 2
 	
 	GLOBALDATA.save()
-	print(GLOBALDATA.Hats)
-	print(GLOBALDATA.FaceI)
 
 func _on_leave_button_pressed():
 	if is_a_hat == 0:
