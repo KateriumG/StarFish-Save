@@ -212,13 +212,11 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_o5xea")
 hframes = 7
 vframes = 7
-frame = 43
 
 [node name="FaceI" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, -17.525)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_o5xea")
 hframes = 7
 vframes = 7
-frame = 2
+frame = 43

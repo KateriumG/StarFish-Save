@@ -66,6 +66,34 @@ func _ready():
 				Main_Skin_Frame.x = 38
 	else:
 		$Hats.hide()
+	
+	if GLOBALDATA.FaceI.has(2):
+		$FaceI.show()
+		var FaceI_Index = GLOBALDATA.FaceI.find(2)
+		match FaceI_Index:
+			0:
+				Main_Skin_Frame.y = 2
+			1:
+				Main_Skin_Frame.y = 6
+			2:
+				Main_Skin_Frame.y = 16
+			3:
+				Main_Skin_Frame.y = 24
+			4:
+				Main_Skin_Frame.y = 26
+			5:
+				Main_Skin_Frame.y = 28
+			6:
+				Main_Skin_Frame.y = 30
+			7:
+				Main_Skin_Frame.y = 32
+			8:
+				Main_Skin_Frame.y = 40
+			9:
+				Main_Skin_Frame.y = 42
+	else:
+		$FaceI.hide()
+	
 	$AnimationPlayer.play("Idle")
 	Set_Skin_Direction(Main_Skin_Frame)
 

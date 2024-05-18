@@ -32,3 +32,21 @@ func Hat_Is_Used(num):
 				modulate.a = 2
 			else:
 				modulate.a = 1
+
+func FaceI_Is_Used(num):
+	if name.contains("FaceI"):
+		if name != "No_FaceI":
+			if GLOBALDATA.FaceI[num] == 2:
+				modulate.a = 2
+			else:
+				modulate.a = 1
+			
+			if GLOBALDATA.FaceI[num] == 0.1:
+				disabled = true
+			else:
+				disabled = false
+		else:
+			if GLOBALDATA.FaceI.has(2) == false:
+				modulate.a = 2
+			else:
+				modulate.a = 1

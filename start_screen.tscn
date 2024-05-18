@@ -263,6 +263,7 @@ text = "Return"
 script = ExtResource("3_nf6pf")
 
 [node name="ItemList5" type="ItemList" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 160.0
 offset_top = 150.0
@@ -517,7 +518,7 @@ hframes = 7
 vframes = 7
 frame = 38
 
-[node name="Button_Continue" type="Button" parent="ItemList5"]
+[node name="Button_Continue2" type="Button" parent="ItemList5"]
 layout_mode = 0
 offset_left = 220.0
 offset_top = 309.0
@@ -538,6 +539,247 @@ offset_bottom = 425.0
 scale = Vector2(1.835, 1.835)
 pivot_offset = Vector2(112.575, 16.195)
 text = "Return"
+script = ExtResource("3_nf6pf")
+
+[node name="ItemList6" type="ItemList" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 160.0
+offset_top = 150.0
+offset_right = 639.0
+offset_bottom = 623.0
+script = ExtResource("2_j610g")
+
+[node name="Label" type="Label" parent="ItemList6"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = -4.0
+offset_right = 351.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 41
+text = "Face Items"
+
+[node name="No_FaceI" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -916.0
+offset_top = -459.5
+offset_right = 1007.94
+offset_bottom = 628.5
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="FaceI0" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -806.0
+offset_top = -458.5
+offset_right = 1117.94
+offset_bottom = 629.5
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI0"]
+position = Vector2(977.273, 760)
+scale = Vector2(22.85, 22.85)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 2
+
+[node name="FaceI1" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -702.0
+offset_top = -458.5
+offset_right = 1221.94
+offset_bottom = 629.5
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI1"]
+position = Vector2(1000, 640)
+scale = Vector2(22.805, 22.805)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 6
+
+[node name="FaceI2" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -601.0
+offset_top = -457.0
+offset_right = 1322.94
+offset_bottom = 631.0
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI2"]
+position = Vector2(1000, 550)
+scale = Vector2(22.25, 22.25)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 16
+
+[node name="FaceI3" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -917.0
+offset_top = -382.0
+offset_right = 1006.94
+offset_bottom = 706.0
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI3"]
+position = Vector2(1318.18, 650)
+scale = Vector2(22.965, 22.965)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 24
+
+[node name="FaceI4" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -808.0
+offset_top = -382.5
+offset_right = 1115.94
+offset_bottom = 705.5
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI4"]
+position = Vector2(1045.45, 440)
+scale = Vector2(22.305, 22.305)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 26
+
+[node name="FaceI5" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -706.0
+offset_top = -380.5
+offset_right = 1217.94
+offset_bottom = 707.5
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI5"]
+position = Vector2(1022.73, 440)
+scale = Vector2(21.48, 21.48)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 28
+
+[node name="FaceI6" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -600.0
+offset_top = -380.0
+offset_right = 1323.94
+offset_bottom = 708.0
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI6"]
+position = Vector2(977.273, 710)
+scale = Vector2(23.725, 23.725)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 30
+
+[node name="FaceI7" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -918.0
+offset_top = -293.5
+offset_right = 1005.94
+offset_bottom = 794.5
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI7"]
+position = Vector2(1000, 590)
+scale = Vector2(22.775, 22.775)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 32
+
+[node name="FaceI8" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -813.0
+offset_top = -292.5
+offset_right = 1110.94
+offset_bottom = 795.5
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI8"]
+position = Vector2(1068.18, 810)
+scale = Vector2(19.33, 19.33)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 40
+
+[node name="FaceI9" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = -916.0
+offset_top = -192.0
+offset_right = 1007.94
+offset_bottom = 896.0
+scale = Vector2(0.044, 0.05)
+pivot_offset = Vector2(1000, 550)
+text = " "
+script = ExtResource("3_nf6pf")
+
+[node name="Ant_Image" type="Sprite2D" parent="ItemList6/FaceI9"]
+position = Vector2(1000, 830)
+scale = Vector2(19.33, 19.33)
+texture = ExtResource("9_pgh3p")
+hframes = 7
+vframes = 7
+frame = 42
+
+[node name="Button_Return5" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 246.0
+offset_right = 405.62
+offset_bottom = 277.0
+scale = Vector2(1.785, 1.785)
+pivot_offset = Vector2(51.095, 17.46)
+text = "Return
+"
+script = ExtResource("3_nf6pf")
+
+[node name="Button_Exit" type="Button" parent="ItemList6"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 335.0
+offset_right = 383.685
+offset_bottom = 366.0
+scale = Vector2(1.835, 1.835)
+pivot_offset = Vector2(82.835, 16.195)
+text = "Exit"
 script = ExtResource("3_nf6pf")
 
 [node name="Title" type="Sprite2D" parent="."]
@@ -582,6 +824,19 @@ position = Vector2(3, 12)
 [connection signal="pressed" from="ItemList5/Hat9" to="." method="_on_hat_9_pressed"]
 [connection signal="pressed" from="ItemList5/Hat10" to="." method="_on_hat_10_pressed"]
 [connection signal="pressed" from="ItemList5/Hat11" to="." method="_on_hat_11_pressed"]
-[connection signal="pressed" from="ItemList5/Button_Continue" to="." method="_on_button_skins_pressed"]
+[connection signal="pressed" from="ItemList5/Button_Continue2" to="." method="_on_button_continue_2_pressed"]
 [connection signal="pressed" from="ItemList5/Button_Return4" to="." method="_on_button_return_4_pressed"]
+[connection signal="pressed" from="ItemList6/No_FaceI" to="." method="_on_no_face_i_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI0" to="." method="_on_face_i_0_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI1" to="." method="_on_face_i_1_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI2" to="." method="_on_face_i_2_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI3" to="." method="_on_face_i_3_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI4" to="." method="_on_face_i_4_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI5" to="." method="_on_face_i_5_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI6" to="." method="_on_face_i_6_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI7" to="." method="_on_face_i_7_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI8" to="." method="_on_face_i_8_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI9" to="." method="_on_face_i_9_pressed"]
+[connection signal="pressed" from="ItemList6/Button_Return5" to="." method="_on_button_return_5_pressed"]
+[connection signal="pressed" from="ItemList6/Button_Exit" to="." method="_on_button_exit_pressed"]
 [connection signal="hidden" from="Unboxing_Sistem" to="." method="_on_unboxing_sistem_hidden"]
