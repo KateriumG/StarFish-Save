@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c81wq7hntgnk8"]
+[gd_scene load_steps=17 format=3 uid="uid://c81wq7hntgnk8"]
 
 [ext_resource type="Script" path="res://start_screen.gd" id="1_2bnr8"]
 [ext_resource type="Texture2D" uid="uid://bjiig3ejrg7no" path="res://Main_A/PointsIcon.png" id="2_elph1"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ccy7t70ofvd6d" path="res://SpriteSheets_Animations/UI_Skins/Skins_Animations.png" id="9_pgh3p"]
 [ext_resource type="PackedScene" uid="uid://glxuvojwe3gi" path="res://unboxing_sistem.tscn" id="12_ipa4q"]
 [ext_resource type="PackedScene" uid="uid://bwg1cqadtouxv" path="res://tv_skins.tscn" id="13_0w4yh"]
+[ext_resource type="AudioStream" uid="uid://b3laxur70tbrh" path="res://SoundTracks/Starfish_Menu_Theme.wav" id="15_mq0df"]
+[ext_resource type="AudioStream" uid="uid://dynsl1yxdu50s" path="res://SoundEffects/lowRandom.ogg" id="16_xv38f"]
 [ext_resource type="Texture2D" uid="uid://dsovhtpsvtgro" path="res://Start_Menu_A/Title.png" id="124_v8e70"]
 [ext_resource type="PackedScene" uid="uid://yusxhtficre4" path="res://parallax.tscn" id="127_7vv5w"]
 
@@ -22,9 +24,9 @@ script = ExtResource("1_2bnr8")
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 114.0
-offset_top = 184.0
-offset_right = 478.76
-offset_bottom = 526.0
+offset_top = 154.0
+offset_right = 479.0
+offset_bottom = 585.0
 script = ExtResource("2_j610g")
 
 [node name="Button_Continue" type="Button" parent="ItemList"]
@@ -42,20 +44,31 @@ script = ExtResource("3_nf6pf")
 [node name="Button_Settings" type="Button" parent="ItemList"]
 layout_mode = 0
 offset_left = 125.0
-offset_top = 152.0
+offset_top = 142.0
 offset_right = 238.0
-offset_bottom = 183.0
+offset_bottom = 173.0
 scale = Vector2(2.23, 2.23)
 pivot_offset = Vector2(56, 15)
 text = "Settings"
 script = ExtResource("3_nf6pf")
 
+[node name="Button_Credits" type="Button" parent="ItemList"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 232.0
+offset_right = 238.0
+offset_bottom = 263.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Credits"
+script = ExtResource("3_nf6pf")
+
 [node name="Button_Quit" type="Button" parent="ItemList"]
 layout_mode = 0
 offset_left = 125.0
-offset_top = 257.0
+offset_top = 322.0
 offset_right = 238.0
-offset_bottom = 288.0
+offset_bottom = 353.0
 scale = Vector2(2.23, 2.23)
 pivot_offset = Vector2(56, 15)
 text = "Quit"
@@ -104,6 +117,7 @@ text = "Return"
 script = ExtResource("3_nf6pf")
 
 [node name="ItemList3" type="ItemList" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 75.0
 offset_top = 123.0
@@ -219,10 +233,10 @@ self_modulate = Color(1, 1, 1, 0)
 offset_left = 380.0
 offset_top = 181.0
 offset_right = 749.0
-offset_bottom = 523.0
+offset_bottom = 618.0
 script = ExtResource("2_j610g")
 
-[node name="Button_Button" type="Button" parent="ItemList4"]
+[node name="Button_Sound" type="Button" parent="ItemList4"]
 layout_mode = 0
 offset_left = 125.0
 offset_top = 48.0
@@ -230,15 +244,8 @@ offset_right = 238.0
 offset_bottom = 79.0
 scale = Vector2(2.23, 2.23)
 pivot_offset = Vector2(56, 15)
-text = "Something"
+text = "Sound"
 script = ExtResource("3_nf6pf")
-
-[node name="HScrollBar" type="HScrollBar" parent="ItemList4"]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 156.0
-offset_right = 66.0
-offset_bottom = 164.0
 
 [node name="Button_Reset" type="Button" parent="ItemList4"]
 layout_mode = 0
@@ -783,6 +790,82 @@ pivot_offset = Vector2(82.835, 16.195)
 text = "Exit"
 script = ExtResource("3_nf6pf")
 
+[node name="ItemList7" type="ItemList" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 333.0
+offset_top = 181.0
+offset_right = 749.0
+offset_bottom = 611.0
+script = ExtResource("2_j610g")
+
+[node name="Label" type="Label" parent="ItemList7"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = -3.0
+offset_right = 178.0
+offset_bottom = 20.0
+scale = Vector2(2.97, 2.97)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+text = "Credits"
+
+[node name="Label2" type="Label" parent="ItemList7"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 78.0
+offset_right = 258.0
+offset_bottom = 153.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+text = "KevinJ - Code
+Blender - 3D Models, Background
+Sprite Sheet Maker - Spritesheets
+Godot - Game Engine
+LMMS - Music
+Kenney - Sound Effects"
+horizontal_alignment = 1
+
+[node name="Button_Return7" type="Button" parent="ItemList7"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 345.0
+offset_right = 257.0
+offset_bottom = 376.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(56, 15)
+text = "Return"
+script = ExtResource("3_nf6pf")
+
+[node name="ItemList8" type="ItemList" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 380.0
+offset_top = 181.0
+offset_right = 749.0
+offset_bottom = 618.0
+script = ExtResource("2_j610g")
+
+[node name="Button_Return8" type="Button" parent="ItemList8"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 277.0
+offset_right = 246.0
+offset_bottom = 308.0
+scale = Vector2(2.23, 2.23)
+pivot_offset = Vector2(65, 15)
+text = "Return"
+script = ExtResource("3_nf6pf")
+
+[node name="Label" type="Label" parent="ItemList8"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = -13.0
+offset_right = 214.0
+offset_bottom = 35.0
+scale = Vector2(2.335, 2.335)
+text = "Main Sound"
+
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(357, 64)
 scale = Vector2(0.3, 0.3)
@@ -801,8 +884,18 @@ scale = Vector2(3.025, 3.025)
 visible = false
 position = Vector2(3, 12)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_mq0df")
+volume_db = -10.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_xv38f")
+volume_db = 5.0
+
 [connection signal="pressed" from="ItemList/Button_Continue" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="ItemList/Button_Settings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="ItemList/Button_Credits" to="." method="_on_button_credits_pressed"]
 [connection signal="pressed" from="ItemList/Button_Quit" to="." method="_on_button_quit_pressed"]
 [connection signal="pressed" from="ItemList2/Button_Play" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="ItemList2/Button_Store" to="." method="_on_button_store_pressed"]
@@ -812,6 +905,7 @@ position = Vector2(3, 12)
 [connection signal="pressed" from="ItemList3/Buy_Box" to="." method="_on_buy_box_pressed"]
 [connection signal="pressed" from="ItemList3/Button_Skins" to="." method="_on_button_skins_pressed"]
 [connection signal="pressed" from="ItemList3/Button_Return2" to="." method="_on_button_return_2_pressed"]
+[connection signal="pressed" from="ItemList4/Button_Sound" to="." method="_on_button_sound_pressed"]
 [connection signal="pressed" from="ItemList4/Button_Reset" to="." method="_on_button_reset_pressed"]
 [connection signal="pressed" from="ItemList4/Button_Return3" to="." method="_on_button_return_3_pressed"]
 [connection signal="pressed" from="ItemList5/No_Hat" to="." method="_on_no_hat_pressed"]
@@ -842,4 +936,5 @@ position = Vector2(3, 12)
 [connection signal="pressed" from="ItemList6/FaceI9" to="." method="_on_face_i_9_pressed"]
 [connection signal="pressed" from="ItemList6/Button_Return5" to="." method="_on_button_return_5_pressed"]
 [connection signal="pressed" from="ItemList6/Button_Exit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="ItemList7/Button_Return7" to="." method="_on_button_return_7_pressed"]
 [connection signal="hidden" from="Unboxing_Sistem" to="." method="_on_unboxing_sistem_hidden"]

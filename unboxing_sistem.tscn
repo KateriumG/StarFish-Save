@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://glxuvojwe3gi"]
+[gd_scene load_steps=11 format=3 uid="uid://glxuvojwe3gi"]
 
 [ext_resource type="Texture2D" uid="uid://l7kybuo66kfl" path="res://SpriteSheets_Animations/UI_Skins/Box_Animations.png" id="1_67jby"]
 [ext_resource type="Script" path="res://unboxing_sistem.gd" id="1_mxlmg"]
 [ext_resource type="Texture2D" uid="uid://ccy7t70ofvd6d" path="res://SpriteSheets_Animations/UI_Skins/Skins_Animations.png" id="3_bmvi4"]
 [ext_resource type="Script" path="res://Skins.gd" id="4_qn511"]
 [ext_resource type="Script" path="res://Button_Script.gd" id="5_6mfgj"]
+[ext_resource type="AudioStream" uid="uid://dynsl1yxdu50s" path="res://SoundEffects/lowRandom.ogg" id="6_ql5d1"]
 
 [sub_resource type="Animation" id="Animation_r5hqx"]
 resource_name = "Idle"
@@ -131,6 +132,10 @@ scale = Vector2(2.52, 2.52)
 pivot_offset = Vector2(75, 17)
 text = "Go Back"
 script = ExtResource("5_6mfgj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ql5d1")
+volume_db = 5.0
 
 [connection signal="pressed" from="Buttons/Use_Button" to="." method="_on_use_button_pressed"]
 [connection signal="pressed" from="Buttons/Leave_Button" to="." method="_on_leave_button_pressed"]

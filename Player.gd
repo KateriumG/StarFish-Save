@@ -119,6 +119,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right"):
 		velocity.y = JUMP_VELOCITY
 		$AnimationPlayer.play("Jump")
+		$Jump_Audio.play()
 		Set_Skin_Direction(Main_Skin_Frame + Vector2(1, 1))
 		$AnimationPlayer.queue("Fall")
 
@@ -140,6 +141,7 @@ func _physics_process(delta):
 	
 	if position.y > 658 or position.y < -10 or position.x > 1162 or position.x < -10:
 		Game_Lost = true 
+		$GameOver_Audio.play()
 		set_physics_process(false)
 	
 	move_and_slide()
@@ -167,11 +169,14 @@ func Touched_Other_Item(type_item):
 	match type_item:
 		1:
 			GPoints += 1
+			$StarCollect_Audio.play()
 		2:
 			Game_Lost = true
+			$GameOver_Audio.play()
 			set_physics_process(false)
 		3:
 			Game_Lost = true
+			$GameOver_Audio.play()
 			set_physics_process(false)
 
 func _on_ui_animation_finish_end():

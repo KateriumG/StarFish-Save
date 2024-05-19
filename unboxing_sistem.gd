@@ -50,6 +50,7 @@ func Unlock_Item():
 			$Skins/Label.position.x = -36
 
 func _on_use_button_pressed():
+	$AudioStreamPlayer.play()
 	if is_a_hat == 0:
 		if GLOBALDATA.Hats.has(2):
 			var repeated = GLOBALDATA.Hats.find(2)
@@ -68,6 +69,7 @@ func _on_use_button_pressed():
 	GLOBALDATA.save()
 
 func _on_leave_button_pressed():
+	$AudioStreamPlayer.play()
 	if is_a_hat == 0:
 		GLOBALDATA.Hats[skin_received] = 1
 	else:

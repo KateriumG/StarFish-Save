@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b20yu2hxq1yij"]
+[gd_scene load_steps=7 format=3 uid="uid://b20yu2hxq1yij"]
 
 [ext_resource type="Script" path="res://Main_Game.gd" id="1_guos0"]
 [ext_resource type="PackedScene" uid="uid://c66aqlvrnhvok" path="res://Fall_Item.tscn" id="2_rdavl"]
 [ext_resource type="PackedScene" uid="uid://cwoien4grwk8u" path="res://Player.tscn" id="2_s5dab"]
 [ext_resource type="PackedScene" uid="uid://yusxhtficre4" path="res://parallax.tscn" id="3_weevj"]
 [ext_resource type="PackedScene" uid="uid://ckxqvc62dokkq" path="res://ui.tscn" id="5_ouyc1"]
+[ext_resource type="AudioStream" uid="uid://bryeq1bsmy3ti" path="res://SoundTracks/Starfish_Main_Theme.wav" id="6_ggq1h"]
 
 [node name="Main_Game" type="Node2D"]
 script = ExtResource("1_guos0")
@@ -24,6 +25,11 @@ autostart = true
 [node name="Points_Timer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ggq1h")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="Close_Screen" from="Player" to="UI" method="_on_player_close_screen"]
 [connection signal="Animation_Finish_End" from="UI" to="." method="_on_ui_animation_finish_end"]

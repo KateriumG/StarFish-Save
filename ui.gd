@@ -23,6 +23,7 @@ func _process(delta):
 		$End_UI/Points_Time3.text = str(display_points.y)
 		display_points.x = move_toward(display_points.x, GLOBALDATA.Best_Stars, 1)
 		display_points.y = move_toward(display_points.y, GLOBALDATA.Best_Score, 1)
+		$AudioStreamPlayer2.play()
 	
 		if display_points.x == GLOBALDATA.Best_Stars and display_points.y == GLOBALDATA.Best_Score:
 			game_is_finished_1 = false
@@ -72,10 +73,12 @@ func _on_player_close_screen():
 	$End_Animation.play("close_screen")
 
 func _on_button_restart_pressed():
+	$AudioStreamPlayer.play()
 	emit_signal("Restart_game")
 	$End_UI.hide()
 
 func _on_button_exit_pressed():
+	$AudioStreamPlayer.play()
 	get_tree().change_scene_to_file("res://start_screen.tscn")
 
 func _input(event):

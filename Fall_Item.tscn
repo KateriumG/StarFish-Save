@@ -547,6 +547,8 @@ animations = [{
 }]
 
 [node name="Fall_Item" type="Area2D"]
+position = Vector2(-8, 976)
+rotation = 3.14159
 script = ExtResource("1_70o1x")
 
 [node name="Good_Collision" type="CollisionShape2D" parent="."]

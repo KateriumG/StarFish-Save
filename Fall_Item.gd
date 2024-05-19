@@ -60,7 +60,7 @@ func _process(delta):
 		if position.y > 712:
 			queue_free()
 	else:
-		if position.y > 782:
+		if position.y > 1100:
 			queue_free()
 
 func _on_body_entered(body):

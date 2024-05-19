@@ -1,9 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwoien4grwk8u"]
+[gd_scene load_steps=24 format=3 uid="uid://cwoien4grwk8u"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_a2qby"]
 [ext_resource type="Texture2D" uid="uid://c08ceycgxgyl4" path="res://SpriteSheets_Animations/Player/Player_With_Ant.png" id="2_g62v7"]
 [ext_resource type="Texture2D" uid="uid://d21p31mt4fa5o" path="res://SpriteSheets_Animations/Player/Player_Without_Ant.png" id="3_wbukx"]
 [ext_resource type="Texture2D" uid="uid://ccy7t70ofvd6d" path="res://SpriteSheets_Animations/UI_Skins/Skins_Animations.png" id="4_o5xea"]
+[ext_resource type="AudioStream" uid="uid://celqlf6hu0tf8" path="res://SoundEffects/phaseJump3.ogg" id="5_7dbpt"]
+[ext_resource type="AudioStream" uid="uid://dmxqmt4fwjud3" path="res://SoundEffects/powerUp2.ogg" id="6_r8jk4"]
+[ext_resource type="AudioStream" uid="uid://cajvywg2tq4tp" path="res://SoundEffects/powerUp4.ogg" id="7_bhf2i"]
+[ext_resource type="AudioStream" uid="uid://dyhbjsyqtiy1d" path="res://SoundEffects/powerUp6.ogg" id="8_nquut"]
+[ext_resource type="AudioStream" uid="uid://c8e4kxkf4o1l6" path="res://SoundEffects/powerUp8.ogg" id="9_80a3y"]
+[ext_resource type="AudioStream" uid="uid://c82qgfurbru11" path="res://SoundEffects/spaceTrash1.ogg" id="10_71msr"]
+[ext_resource type="AudioStream" uid="uid://jwv63prrw223" path="res://SoundEffects/spaceTrash2.ogg" id="11_dfi1i"]
+[ext_resource type="AudioStream" uid="uid://ceq1o3w3bahf6" path="res://SoundEffects/spaceTrash3.ogg" id="12_lt2dq"]
+[ext_resource type="AudioStream" uid="uid://nc4qwmka3n8n" path="res://SoundEffects/spaceTrash4.ogg" id="13_prive"]
+[ext_resource type="AudioStream" uid="uid://c3q0ry3i2us4y" path="res://SoundEffects/spaceTrash5.ogg" id="14_ggacc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_584s8"]
 radius = 23.8213
@@ -175,6 +185,31 @@ _data = {
 "RESET": SubResource("Animation_ovbl7")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_aaekp"]
+playback_mode = 1
+streams_count = 4
+stream_0/stream = ExtResource("6_r8jk4")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("7_bhf2i")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("8_nquut")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("9_80a3y")
+stream_3/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x8l14"]
+streams_count = 5
+stream_0/stream = ExtResource("10_71msr")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("11_dfi1i")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("12_lt2dq")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("13_prive")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("14_ggacc")
+stream_4/weight = 1.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a2qby")
 
@@ -220,3 +255,12 @@ texture = ExtResource("4_o5xea")
 hframes = 7
 vframes = 7
 frame = 43
+
+[node name="Jump_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7dbpt")
+
+[node name="StarCollect_Audio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_aaekp")
+
+[node name="GameOver_Audio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_x8l14")

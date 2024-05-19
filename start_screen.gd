@@ -18,6 +18,8 @@ func _ready():
 	$ItemList4.show()
 	$ItemList5.show()
 	$ItemList6.show()
+	$ItemList7.show()
+	$ItemList8.show()
 	#$AnimatedSprite2D.play("Main_Loop")
 	set_process(true)
 	
@@ -44,11 +46,16 @@ func _process(delta):
 				$ItemList5.shade_in(Context[1])
 				$ItemList5/No_Hat.grab_focus()
 				Check_Hats_On()
-				
 			"ItemList6":
 				$ItemList6.shade_in(Context[1])
 				$ItemList6/No_FaceI.grab_focus()
 				Check_FaceI_On()
+			"ItemList7":
+				$ItemList7.shade_in(Context[1])
+				$ItemList7/Button_Return7.grab_focus()
+			"ItemList8":
+				$ItemList8.shade_in(Context[1])
+				
 		
 	if Context[3] != null:
 		match Context[3]:
@@ -67,9 +74,12 @@ func _process(delta):
 				$ItemList5.shade_out(Context[3])
 			"ItemList6":
 				$ItemList6.shade_out(Context[3])
+			"ItemList7":
+				$ItemList7.shade_out(Context[3])
 
 
 func _on_button_quit_pressed():
+	$AudioStreamPlayer2.play()
 	get_tree().quit()
 
 func _on_button_continue_pressed():
@@ -77,6 +87,7 @@ func _on_button_continue_pressed():
 	$ItemList2.position = Start_Position
 	$ItemList2.modulate.a = 0
 	set_process(true)
+	$AudioStreamPlayer2.play()
 	
 func _on_button_play_pressed():
 	get_tree().change_scene_to_file("res://main_game.tscn")
@@ -86,12 +97,14 @@ func _on_button_return_pressed():
 	$ItemList.position = Start_Position
 	$ItemList.modulate.a = 0
 	set_process(true)
+	$AudioStreamPlayer2.play()
 
 func _on_button_return_2_pressed():
 	Context = [1, "ItemList2", 1, "ItemList3"]
 	$ItemList2.position = Start_Position
 	$ItemList2.modulate.a = 0
 	set_process(true)
+	$AudioStreamPlayer2.play()
 
 func _on_button_store_pressed():
 	Context = [1, "ItemList3", 1, "ItemList2"]
@@ -99,18 +112,21 @@ func _on_button_store_pressed():
 	$ItemList3.modulate.a = 0
 	set_process(true)
 	$ItemList3/TotalIcon/PointsIcon/Label.text = str(GLOBALDATA.TotalStars)
+	$AudioStreamPlayer2.play()
 
 func _on_button_return_3_pressed():
 	Context = [1, "ItemList", 1, "ItemList4"]
 	$ItemList.position = Start_Position
 	$ItemList.modulate.a = 0
 	set_process(true)
+	$AudioStreamPlayer2.play()
 
 func _on_button_settings_pressed():
 	Context = [1, "ItemList4", 1, "ItemList"]
 	$ItemList4.position = Start_Position
 	$ItemList4.modulate.a = 0
 	set_process(true)
+	$AudioStreamPlayer2.play()
 
 func _on_button_reset_pressed():
 	GLOBALDATA.Best_Score = 0
@@ -119,6 +135,7 @@ func _on_button_reset_pressed():
 	GLOBALDATA.Hats = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
 	GLOBALDATA.FaceI = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
 	GLOBALDATA.save()
+	$AudioStreamPlayer2.play()
 
 func _on_ant_pressed():
 	GLOBALDATA.Antennae_Using = true
@@ -127,11 +144,13 @@ func _on_ant_pressed():
 		GLOBALDATA.Hats[repeated] = 1
 	GLOBALDATA.save()
 	Antennae_Update()
+	$AudioStreamPlayer2.play()
 	
 func _on_no_ant_pressed():
 	GLOBALDATA.Antennae_Using = false
 	GLOBALDATA.save()
 	Antennae_Update()
+	$AudioStreamPlayer2.play()
 
 func _on_buy_box_pressed():
 	if GLOBALDATA.TotalStars >= 35:
@@ -139,6 +158,7 @@ func _on_buy_box_pressed():
 		$ItemList3/TotalIcon/PointsIcon/Label.text = str(GLOBALDATA.TotalStars)
 		GLOBALDATA.save()
 		$Unboxing_Sistem.show()
+		$AudioStreamPlayer2.play()
 
 func _on_unboxing_sistem_hidden():
 	if Context[1] == "ItemList3":
@@ -149,12 +169,14 @@ func _on_button_skins_pressed():
 	$ItemList5.position = Start_Position
 	$ItemList5.modulate.a = 0
 	set_process(true)
+	$AudioStreamPlayer2.play()
 
 func _on_button_return_4_pressed():
 	Context = [1, "ItemList3", 1, "ItemList5"]
 	$ItemList4.position = Start_Position
 	$ItemList4.modulate.a = 0
 	set_process(true)
+	$AudioStreamPlayer2.play()
 
 func Check_Hats_On():
 	$ItemList5/No_Hat.Hat_Is_Used(0)
@@ -200,6 +222,7 @@ func _on_no_hat_pressed():
 		GLOBALDATA.Hats[repeated] = 1
 	GLOBALDATA.save()
 	Check_Hats_On()
+	$AudioStreamPlayer2.play()
 
 func _on_hat_5_pressed():
 	Get_Hat(5)
@@ -230,18 +253,21 @@ func Get_Hat(Hat):
 	GLOBALDATA.Antennae_Using = false
 	GLOBALDATA.save()
 	Check_Hats_On()
+	$AudioStreamPlayer2.play()
 
 func _on_button_continue_2_pressed():
 	Context = [1, "ItemList6", 1, "ItemList5"]
 	$ItemList6.position = Start_Position
 	$ItemList6.modulate.a = 0
 	set_process(true)
+	$AudioStreamPlayer2.play()
 
 func _on_button_return_5_pressed():
 	Context = [1, "ItemList5", 1, "ItemList6"]
 	$ItemList5.position = Start_Position
 	$ItemList5.modulate.a = 0
 	set_process(true)
+	$AudioStreamPlayer2.play()
 
 func _on_button_exit_pressed():
 	Context = [1, "ItemList3", 1, "ItemList6"]
@@ -249,6 +275,7 @@ func _on_button_exit_pressed():
 	$ItemList3.modulate.a = 0
 	set_process(true)
 	$ItemList3/TotalIcon/PointsIcon/Label.text = str(GLOBALDATA.TotalStars)
+	$AudioStreamPlayer2.play()
 
 func Check_FaceI_On():
 	$ItemList6/No_FaceI.FaceI_Is_Used(0)
@@ -270,6 +297,7 @@ func Get_FaceI(FaceI):
 	GLOBALDATA.FaceI[FaceI] = 2
 	GLOBALDATA.save()
 	Check_FaceI_On()
+	$AudioStreamPlayer2.play()
 
 func _on_no_face_i_pressed():
 	if GLOBALDATA.FaceI.has(2):
@@ -277,6 +305,7 @@ func _on_no_face_i_pressed():
 		GLOBALDATA.FaceI[repeated] = 1
 	GLOBALDATA.save()
 	Check_Hats_On()
+	$AudioStreamPlayer2.play()
 
 func _on_face_i_0_pressed():
 	Get_FaceI(0)
@@ -308,3 +337,19 @@ func _on_face_i_8_pressed():
 func _on_face_i_9_pressed():
 	Get_FaceI(9)
 
+func _on_button_credits_pressed():
+	Context = [1, "ItemList7", 1, "ItemList"]
+	$ItemList7.position = Start_Position
+	$ItemList7.modulate.a = 0
+	set_process(true)
+	$AudioStreamPlayer2.play()
+
+func _on_button_return_7_pressed():
+	Context = [1, "ItemList", 1, "ItemList7"]
+	$ItemList.position = Start_Position
+	$ItemList.modulate.a = 0
+	set_process(true)
+	$AudioStreamPlayer2.play()
+
+func _on_button_sound_pressed():
+	pass # Replace with function body.
