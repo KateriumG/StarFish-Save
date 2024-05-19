@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c81wq7hntgnk8"]
+[gd_scene load_steps=16 format=3 uid="uid://c81wq7hntgnk8"]
 
 [ext_resource type="Script" path="res://start_screen.gd" id="1_2bnr8"]
 [ext_resource type="Texture2D" uid="uid://bjiig3ejrg7no" path="res://Main_A/PointsIcon.png" id="2_elph1"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://blhs42wy46juf" path="res://animation_sc.tscn" id="9_h8j8h"]
 [ext_resource type="Texture2D" uid="uid://ccy7t70ofvd6d" path="res://SpriteSheets_Animations/UI_Skins/Skins_Animations.png" id="9_pgh3p"]
 [ext_resource type="PackedScene" uid="uid://glxuvojwe3gi" path="res://unboxing_sistem.tscn" id="12_ipa4q"]
+[ext_resource type="Texture2D" uid="uid://qbtbj2oiucf7" path="res://SpriteSheets_Animations/UI_Skins/TV_Skins.png" id="13_13r0a"]
+[ext_resource type="Script" path="res://TvSkins.gd" id="14_8arxw"]
 [ext_resource type="Texture2D" uid="uid://dsovhtpsvtgro" path="res://Start_Menu_A/Title.png" id="124_v8e70"]
 [ext_resource type="PackedScene" uid="uid://yusxhtficre4" path="res://parallax.tscn" id="127_7vv5w"]
 
@@ -793,6 +795,22 @@ position = Vector2(63, 53)
 [node name="Animation_SC" parent="." instance=ExtResource("9_h8j8h")]
 position = Vector2(858, 292)
 scale = Vector2(3.025, 3.025)
+
+[node name="TvSkins" type="Sprite2D" parent="."]
+position = Vector2(839, 987)
+scale = Vector2(0.675, 0.675)
+texture = ExtResource("13_13r0a")
+script = ExtResource("14_8arxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="TvSkins"]
+position = Vector2(2.96296, 82.963)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("5_lgrgr")
+hframes = 7
+vframes = 7
+frame = 31
+
+[node name="Sprite2D_No_Ant" type="Sprite2D" parent="TvSkins"]
 
 [node name="Unboxing_Sistem" parent="." instance=ExtResource("12_ipa4q")]
 visible = false

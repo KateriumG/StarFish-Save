@@ -4,6 +4,9 @@ var Start_Position = Vector2(380.0 , 190.0)
 var Central_Position = Vector2(160.0, 190.0)
 var Final_Position = Vector2(3.0, 190.0)
 
+var TV_Show_Position = Vector2(873, 343)
+var TV_Hide_Position = Vector2(873, 1087)
+
 var Context = [1, "ItemList", 1, null]
 
 var var_ = 0
@@ -17,6 +20,7 @@ func _ready():
 	$ItemList6.show()
 	#$AnimatedSprite2D.play("Main_Loop")
 	set_process(true)
+	
 
 func _process(delta):
 	if Context[0] == 1:
@@ -31,6 +35,8 @@ func _process(delta):
 				Antennae_Update()
 				$ItemList3.shade_in(Context[1])
 				$ItemList3/Ant.grab_focus()
+				$TvSkins.Go_In()
+				$Animation_SC.Change_Size(Vector2(0.5, 0.5))
 			"ItemList4":
 				$ItemList4.shade_in(Context[1])
 				$ItemList4/Button_Button.grab_focus()
@@ -38,6 +44,7 @@ func _process(delta):
 				$ItemList5.shade_in(Context[1])
 				$ItemList5/No_Hat.grab_focus()
 				Check_Hats_On()
+				
 			"ItemList6":
 				$ItemList6.shade_in(Context[1])
 				$ItemList6/No_FaceI.grab_focus()
@@ -51,6 +58,8 @@ func _process(delta):
 				$ItemList2.shade_out(Context[3])
 			"ItemList3":
 				$ItemList3.shade_out(Context[3])
+				$TvSkins.GO_Out()
+				$Animation_SC.Change_Size(Vector2(3, 3))
 			"ItemList4":
 				$ItemList4.shade_out(Context[3])
 			"ItemList5":

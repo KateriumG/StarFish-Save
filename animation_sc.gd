@@ -4,6 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("Normal")
+	scale = Vector2(3, 3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,3 +21,6 @@ func _process(delta):
 		$A1.hide()
 		$A2.hide()
 		$A3.show()
+
+func Change_Size(Size):
+	scale = lerp(scale, Size, 0.05)
