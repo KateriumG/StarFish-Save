@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c81wq7hntgnk8"]
+[gd_scene load_steps=15 format=3 uid="uid://c81wq7hntgnk8"]
 
 [ext_resource type="Script" path="res://start_screen.gd" id="1_2bnr8"]
 [ext_resource type="Texture2D" uid="uid://bjiig3ejrg7no" path="res://Main_A/PointsIcon.png" id="2_elph1"]
@@ -11,8 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://blhs42wy46juf" path="res://animation_sc.tscn" id="9_h8j8h"]
 [ext_resource type="Texture2D" uid="uid://ccy7t70ofvd6d" path="res://SpriteSheets_Animations/UI_Skins/Skins_Animations.png" id="9_pgh3p"]
 [ext_resource type="PackedScene" uid="uid://glxuvojwe3gi" path="res://unboxing_sistem.tscn" id="12_ipa4q"]
-[ext_resource type="Texture2D" uid="uid://qbtbj2oiucf7" path="res://SpriteSheets_Animations/UI_Skins/TV_Skins.png" id="13_13r0a"]
-[ext_resource type="Script" path="res://TvSkins.gd" id="14_8arxw"]
+[ext_resource type="PackedScene" uid="uid://bwg1cqadtouxv" path="res://tv_skins.tscn" id="13_0w4yh"]
 [ext_resource type="Texture2D" uid="uid://dsovhtpsvtgro" path="res://Start_Menu_A/Title.png" id="124_v8e70"]
 [ext_resource type="PackedScene" uid="uid://yusxhtficre4" path="res://parallax.tscn" id="127_7vv5w"]
 
@@ -105,7 +104,6 @@ text = "Return"
 script = ExtResource("3_nf6pf")
 
 [node name="ItemList3" type="ItemList" parent="."]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 75.0
 offset_top = 123.0
@@ -544,6 +542,7 @@ text = "Return"
 script = ExtResource("3_nf6pf")
 
 [node name="ItemList6" type="ItemList" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 160.0
 offset_top = 150.0
@@ -562,10 +561,10 @@ text = "Face Items"
 
 [node name="No_FaceI" type="Button" parent="ItemList6"]
 layout_mode = 0
-offset_left = -916.0
-offset_top = -459.5
-offset_right = 1007.94
-offset_bottom = 628.5
+offset_left = -925.0
+offset_top = -459.0
+offset_right = 998.94
+offset_bottom = 629.0
 scale = Vector2(0.044, 0.05)
 pivot_offset = Vector2(1000, 550)
 text = " "
@@ -573,10 +572,10 @@ script = ExtResource("3_nf6pf")
 
 [node name="FaceI0" type="Button" parent="ItemList6"]
 layout_mode = 0
-offset_left = -806.0
-offset_top = -458.5
-offset_right = 1117.94
-offset_bottom = 629.5
+offset_left = -811.0
+offset_top = -458.0
+offset_right = 1112.94
+offset_bottom = 630.0
 scale = Vector2(0.044, 0.05)
 pivot_offset = Vector2(1000, 550)
 text = " "
@@ -630,10 +629,10 @@ frame = 16
 
 [node name="FaceI3" type="Button" parent="ItemList6"]
 layout_mode = 0
-offset_left = -917.0
-offset_top = -382.0
-offset_right = 1006.94
-offset_bottom = 706.0
+offset_left = -924.0
+offset_top = -366.0
+offset_right = 999.94
+offset_bottom = 722.0
 scale = Vector2(0.044, 0.05)
 pivot_offset = Vector2(1000, 550)
 text = " "
@@ -649,10 +648,10 @@ frame = 24
 
 [node name="FaceI4" type="Button" parent="ItemList6"]
 layout_mode = 0
-offset_left = -808.0
-offset_top = -382.5
-offset_right = 1115.94
-offset_bottom = 705.5
+offset_left = -811.0
+offset_top = -366.0
+offset_right = 1112.94
+offset_bottom = 722.0
 scale = Vector2(0.044, 0.05)
 pivot_offset = Vector2(1000, 550)
 text = " "
@@ -668,10 +667,10 @@ frame = 26
 
 [node name="FaceI5" type="Button" parent="ItemList6"]
 layout_mode = 0
-offset_left = -706.0
-offset_top = -380.5
-offset_right = 1217.94
-offset_bottom = 707.5
+offset_left = -705.0
+offset_top = -364.5
+offset_right = 1218.94
+offset_bottom = 723.5
 scale = Vector2(0.044, 0.05)
 pivot_offset = Vector2(1000, 550)
 text = " "
@@ -687,10 +686,10 @@ frame = 28
 
 [node name="FaceI6" type="Button" parent="ItemList6"]
 layout_mode = 0
-offset_left = -600.0
-offset_top = -380.0
-offset_right = 1323.94
-offset_bottom = 708.0
+offset_left = -599.0
+offset_top = -364.0
+offset_right = 1324.94
+offset_bottom = 724.0
 scale = Vector2(0.044, 0.05)
 pivot_offset = Vector2(1000, 550)
 text = " "
@@ -706,10 +705,10 @@ frame = 30
 
 [node name="FaceI7" type="Button" parent="ItemList6"]
 layout_mode = 0
-offset_left = -918.0
-offset_top = -293.5
-offset_right = 1005.94
-offset_bottom = 794.5
+offset_left = -924.0
+offset_top = -263.0
+offset_right = 999.94
+offset_bottom = 825.0
 scale = Vector2(0.044, 0.05)
 pivot_offset = Vector2(1000, 550)
 text = " "
@@ -726,9 +725,9 @@ frame = 32
 [node name="FaceI8" type="Button" parent="ItemList6"]
 layout_mode = 0
 offset_left = -813.0
-offset_top = -292.5
+offset_top = -265.0
 offset_right = 1110.94
-offset_bottom = 795.5
+offset_bottom = 823.0
 scale = Vector2(0.044, 0.05)
 pivot_offset = Vector2(1000, 550)
 text = " "
@@ -744,10 +743,10 @@ frame = 40
 
 [node name="FaceI9" type="Button" parent="ItemList6"]
 layout_mode = 0
-offset_left = -916.0
-offset_top = -192.0
-offset_right = 1007.94
-offset_bottom = 896.0
+offset_left = -922.0
+offset_top = -160.0
+offset_right = 1001.94
+offset_bottom = 928.0
 scale = Vector2(0.044, 0.05)
 pivot_offset = Vector2(1000, 550)
 text = " "
@@ -763,10 +762,10 @@ frame = 42
 
 [node name="Button_Return5" type="Button" parent="ItemList6"]
 layout_mode = 0
-offset_left = 310.0
-offset_top = 246.0
-offset_right = 405.62
-offset_bottom = 277.0
+offset_left = 308.0
+offset_top = 268.0
+offset_right = 403.62
+offset_bottom = 299.0
 scale = Vector2(1.785, 1.785)
 pivot_offset = Vector2(51.095, 17.46)
 text = "Return
@@ -776,9 +775,9 @@ script = ExtResource("3_nf6pf")
 [node name="Button_Exit" type="Button" parent="ItemList6"]
 layout_mode = 0
 offset_left = 239.0
-offset_top = 335.0
+offset_top = 375.0
 offset_right = 383.685
-offset_bottom = 366.0
+offset_bottom = 406.0
 scale = Vector2(1.835, 1.835)
 pivot_offset = Vector2(82.835, 16.195)
 text = "Exit"
@@ -796,21 +795,7 @@ position = Vector2(63, 53)
 position = Vector2(858, 292)
 scale = Vector2(3.025, 3.025)
 
-[node name="TvSkins" type="Sprite2D" parent="."]
-position = Vector2(839, 987)
-scale = Vector2(0.675, 0.675)
-texture = ExtResource("13_13r0a")
-script = ExtResource("14_8arxw")
-
-[node name="Sprite2D" type="Sprite2D" parent="TvSkins"]
-position = Vector2(2.96296, 82.963)
-scale = Vector2(2.6, 2.6)
-texture = ExtResource("5_lgrgr")
-hframes = 7
-vframes = 7
-frame = 31
-
-[node name="Sprite2D_No_Ant" type="Sprite2D" parent="TvSkins"]
+[node name="TvSkins" parent="." instance=ExtResource("13_0w4yh")]
 
 [node name="Unboxing_Sistem" parent="." instance=ExtResource("12_ipa4q")]
 visible = false

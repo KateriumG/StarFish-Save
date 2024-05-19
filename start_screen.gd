@@ -58,8 +58,9 @@ func _process(delta):
 				$ItemList2.shade_out(Context[3])
 			"ItemList3":
 				$ItemList3.shade_out(Context[3])
-				$TvSkins.GO_Out()
-				$Animation_SC.Change_Size(Vector2(3, 3))
+				if Context[1] == "ItemList2":
+					$TvSkins.GO_Out()
+					$Animation_SC.Change_Size(Vector2(3, 3))
 			"ItemList4":
 				$ItemList4.shade_out(Context[3])
 			"ItemList5":
@@ -306,3 +307,4 @@ func _on_face_i_8_pressed():
 
 func _on_face_i_9_pressed():
 	Get_FaceI(9)
+
