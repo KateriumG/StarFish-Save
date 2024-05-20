@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c81wq7hntgnk8"]
+[gd_scene load_steps=18 format=3 uid="uid://c81wq7hntgnk8"]
 
 [ext_resource type="Script" path="res://start_screen.gd" id="1_2bnr8"]
 [ext_resource type="Texture2D" uid="uid://bjiig3ejrg7no" path="res://Main_A/PointsIcon.png" id="2_elph1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://l7kybuo66kfl" path="res://SpriteSheets_Animations/UI_Skins/Box_Animations.png" id="8_2sydp"]
 [ext_resource type="PackedScene" uid="uid://blhs42wy46juf" path="res://animation_sc.tscn" id="9_h8j8h"]
 [ext_resource type="Texture2D" uid="uid://ccy7t70ofvd6d" path="res://SpriteSheets_Animations/UI_Skins/Skins_Animations.png" id="9_pgh3p"]
+[ext_resource type="PackedScene" uid="uid://b4dhv77ajkqjb" path="res://volume_slider.tscn" id="10_wnl42"]
 [ext_resource type="PackedScene" uid="uid://glxuvojwe3gi" path="res://unboxing_sistem.tscn" id="12_ipa4q"]
 [ext_resource type="PackedScene" uid="uid://bwg1cqadtouxv" path="res://tv_skins.tscn" id="13_0w4yh"]
 [ext_resource type="AudioStream" uid="uid://b3laxur70tbrh" path="res://SoundTracks/Starfish_Menu_Theme.wav" id="15_mq0df"]
@@ -840,31 +841,106 @@ script = ExtResource("3_nf6pf")
 
 [node name="ItemList8" type="ItemList" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 380.0
-offset_top = 181.0
+offset_left = 363.0
+offset_top = 156.0
 offset_right = 749.0
-offset_bottom = 618.0
+offset_bottom = 624.0
 script = ExtResource("2_j610g")
+
+[node name="Label" type="Label" parent="ItemList8"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = -7.0
+offset_right = 155.76
+offset_bottom = 41.0
+scale = Vector2(2.335, 2.335)
+text = "Sound Settings"
+
+[node name="Master_Panel" type="Panel" parent="ItemList8"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 47.0
+offset_right = 325.0
+offset_bottom = 120.0
+
+[node name="Label2" type="Label" parent="ItemList8/Master_Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 159.76
+offset_bottom = 49.0
+scale = Vector2(1.765, 1.765)
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="Volume_Slider" parent="ItemList8/Master_Panel" instance=ExtResource("10_wnl42")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 47.0
+offset_right = 282.0
+offset_bottom = 63.0
+bus_name = "Master"
+
+[node name="Music_Panel" type="Panel" parent="ItemList8"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 145.0
+offset_right = 325.0
+offset_bottom = 218.0
+
+[node name="Label2" type="Label" parent="ItemList8/Music_Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 159.76
+offset_bottom = 49.0
+scale = Vector2(1.765, 1.765)
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="Volume_Slider" parent="ItemList8/Music_Panel" instance=ExtResource("10_wnl42")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 47.0
+offset_right = 282.0
+offset_bottom = 63.0
+bus_name = "Music"
+
+[node name="SFX_Panel" type="Panel" parent="ItemList8"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 249.0
+offset_right = 327.0
+offset_bottom = 322.0
+
+[node name="Label2" type="Label" parent="ItemList8/SFX_Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 159.76
+offset_bottom = 49.0
+scale = Vector2(1.765, 1.765)
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="Volume_Slider" parent="ItemList8/SFX_Panel" instance=ExtResource("10_wnl42")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 47.0
+offset_right = 282.0
+offset_bottom = 63.0
+bus_name = "SFX"
 
 [node name="Button_Return8" type="Button" parent="ItemList8"]
 layout_mode = 0
-offset_left = 123.0
-offset_top = 277.0
-offset_right = 246.0
-offset_bottom = 308.0
+offset_left = 122.0
+offset_top = 371.0
+offset_right = 245.0
+offset_bottom = 402.0
 scale = Vector2(2.23, 2.23)
 pivot_offset = Vector2(65, 15)
 text = "Return"
 script = ExtResource("3_nf6pf")
-
-[node name="Label" type="Label" parent="ItemList8"]
-layout_mode = 0
-offset_left = 83.0
-offset_top = -13.0
-offset_right = 214.0
-offset_bottom = 35.0
-scale = Vector2(2.335, 2.335)
-text = "Main Sound"
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(357, 64)
@@ -886,12 +962,12 @@ position = Vector2(3, 12)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_mq0df")
-volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_xv38f")
-volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="pressed" from="ItemList/Button_Continue" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="ItemList/Button_Settings" to="." method="_on_button_settings_pressed"]
@@ -937,4 +1013,5 @@ volume_db = 5.0
 [connection signal="pressed" from="ItemList6/Button_Return5" to="." method="_on_button_return_5_pressed"]
 [connection signal="pressed" from="ItemList6/Button_Exit" to="." method="_on_button_exit_pressed"]
 [connection signal="pressed" from="ItemList7/Button_Return7" to="." method="_on_button_return_7_pressed"]
+[connection signal="pressed" from="ItemList8/Button_Return8" to="." method="_on_button_return_8_pressed"]
 [connection signal="hidden" from="Unboxing_Sistem" to="." method="_on_unboxing_sistem_hidden"]

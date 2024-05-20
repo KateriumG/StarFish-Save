@@ -41,7 +41,7 @@ func _process(delta):
 				$Animation_SC.Change_Size(Vector2(0.5, 0.5))
 			"ItemList4":
 				$ItemList4.shade_in(Context[1])
-				$ItemList4/Button_Button.grab_focus()
+				$ItemList4/Button_Sound.grab_focus()
 			"ItemList5":
 				$ItemList5.shade_in(Context[1])
 				$ItemList5/No_Hat.grab_focus()
@@ -55,7 +55,7 @@ func _process(delta):
 				$ItemList7/Button_Return7.grab_focus()
 			"ItemList8":
 				$ItemList8.shade_in(Context[1])
-				
+				$ItemList8/Master_Panel/Volume_Slider.grab_focus()
 		
 	if Context[3] != null:
 		match Context[3]:
@@ -76,6 +76,8 @@ func _process(delta):
 				$ItemList6.shade_out(Context[3])
 			"ItemList7":
 				$ItemList7.shade_out(Context[3])
+			"ItemList8":
+				$ItemList8.shade_out(Context[3])
 
 
 func _on_button_quit_pressed():
@@ -352,4 +354,15 @@ func _on_button_return_7_pressed():
 	$AudioStreamPlayer2.play()
 
 func _on_button_sound_pressed():
-	pass # Replace with function body.
+	Context = [1, "ItemList8", 1, "ItemList4"]
+	$ItemList8.position = Start_Position
+	$ItemList8.modulate.a = 0
+	set_process(true)
+	$AudioStreamPlayer2.play()
+
+func _on_button_return_8_pressed():
+	Context = [1, "ItemList4", 1, "ItemList8"]
+	$ItemList4.position = Start_Position
+	$ItemList4.modulate.a = 0
+	set_process(true)
+	$AudioStreamPlayer2.play()

@@ -28,8 +28,8 @@ autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ggq1h")
-volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="Close_Screen" from="Player" to="UI" method="_on_player_close_screen"]
 [connection signal="Animation_Finish_End" from="UI" to="." method="_on_ui_animation_finish_end"]

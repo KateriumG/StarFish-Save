@@ -1,6 +1,6 @@
 extends Node
 
-var Save_File = "user://ElementalData.save"
+var Save_File = "user://GSavedFile.save"
 
 var TotalStars : int
 var Best_Score : int
@@ -8,6 +8,7 @@ var Best_Stars : int
 var Antennae_Using : bool 
 var Hats : Array
 var FaceI : Array
+var SoundsData : Vector3
 
 func _ready():
 	load_files()
@@ -20,6 +21,7 @@ func save():
 	file.store_var(Antennae_Using)
 	file.store_var(Hats)
 	file.store_var(FaceI)
+	file.store_var(SoundsData)
 
 func load_files():
 	if FileAccess.file_exists(Save_File):
@@ -30,6 +32,7 @@ func load_files():
 		Antennae_Using = file.get_var()
 		Hats = file.get_var()
 		FaceI = file.get_var()
+		SoundsData = file.get_var()
 	else:
 		TotalStars = 0
 		Best_Score = 0
@@ -37,3 +40,4 @@ func load_files():
 		Antennae_Using = true
 		Hats = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
 		FaceI = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+		SoundsData = Vector3(0.5, 1, 1)
