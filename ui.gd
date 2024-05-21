@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 signal Animation_Finish_End
 signal Restart_game
@@ -27,6 +27,8 @@ func _process(delta):
 	
 		if display_points.x == GLOBALDATA.Best_Stars and display_points.y == GLOBALDATA.Best_Score:
 			game_is_finished_1 = false
+			$End_UI/Points3.text = str(GLOBALDATA.Best_Stars)
+			$End_UI/Points_Time3.text = str(GLOBALDATA.Best_Score)
 	
 	if game_is_finished_2 == true:
 		$End_UI/Points4.text = str(display_points.z)
@@ -34,6 +36,7 @@ func _process(delta):
 	
 		if display_points.z == GLOBALDATA.TotalStars:
 			game_is_finished_2 = false
+			$End_UI/Points4.text = str(GLOBALDATA.TotalStars)
 	
 	if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("Right"):
 		$Keys_UI.hide()

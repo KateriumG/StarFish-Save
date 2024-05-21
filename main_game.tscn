@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b20yu2hxq1yij"]
+[gd_scene load_steps=8 format=3 uid="uid://b20yu2hxq1yij"]
 
 [ext_resource type="Script" path="res://Main_Game.gd" id="1_guos0"]
 [ext_resource type="PackedScene" uid="uid://c66aqlvrnhvok" path="res://Fall_Item.tscn" id="2_rdavl"]
 [ext_resource type="PackedScene" uid="uid://cwoien4grwk8u" path="res://Player.tscn" id="2_s5dab"]
+[ext_resource type="PackedScene" uid="uid://dm8a8tjkvxu6k" path="res://pause_menu.tscn" id="3_kf4oy"]
 [ext_resource type="PackedScene" uid="uid://yusxhtficre4" path="res://parallax.tscn" id="3_weevj"]
 [ext_resource type="PackedScene" uid="uid://ckxqvc62dokkq" path="res://ui.tscn" id="5_ouyc1"]
 [ext_resource type="AudioStream" uid="uid://bryeq1bsmy3ti" path="res://SoundTracks/Starfish_Main_Theme.wav" id="6_ggq1h"]
@@ -11,13 +12,18 @@
 script = ExtResource("1_guos0")
 Items = ExtResource("2_rdavl")
 
+[node name="Pause_Menu" parent="." instance=ExtResource("3_kf4oy")]
+z_index = 20
+
 [node name="Player" parent="." instance=ExtResource("2_s5dab")]
-position = Vector2(585, 315)
+position = Vector2(583, 322)
 
 [node name="Parallax" parent="." instance=ExtResource("3_weevj")]
+z_index = 100
 position = Vector2(585, 315)
 
 [node name="UI" parent="." instance=ExtResource("5_ouyc1")]
+z_index = 15
 
 [node name="Spawn_Timer" type="Timer" parent="."]
 autostart = true
@@ -31,6 +37,7 @@ stream = ExtResource("6_ggq1h")
 autoplay = true
 bus = &"Music"
 
+[connection signal="Close_Screen" from="Player" to="Pause_Menu" method="_on_player_close_screen"]
 [connection signal="Close_Screen" from="Player" to="UI" method="_on_player_close_screen"]
 [connection signal="Animation_Finish_End" from="UI" to="." method="_on_ui_animation_finish_end"]
 [connection signal="Animation_Finish_End" from="UI" to="Player" method="_on_ui_animation_finish_end"]

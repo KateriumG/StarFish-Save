@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://ckxqvc62dokkq"]
+[gd_scene load_steps=59 format=3 uid="uid://ckxqvc62dokkq"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_mdhj3"]
 [ext_resource type="Texture2D" uid="uid://c5bqdjoihw6xr" path="res://Main_A/Points_Time.png" id="3_m1opp"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cakvthwenocpp" path="res://Main_A/Maxium.png" id="44_hmwdb"]
 [ext_resource type="Texture2D" uid="uid://5a3vpw8jx1yd" path="res://Main_A/Total_Icon.png" id="45_tguxh"]
 [ext_resource type="Texture2D" uid="uid://riwtecf4fi2" path="res://SpriteSheets_Animations/UI/Buttons_Animations.png" id="46_x5vs6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol2tr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ycqwl"]
 outline_size = 10
@@ -437,8 +439,22 @@ _data = {
 "RESET": SubResource("Animation_ehakb")
 }
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_mdhj3")
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="."]
+position = Vector2(292, 358)
+scale = Vector2(27.239, 26.517)
+shape = SubResource("RectangleShape2D_ol2tr")
+action = "Left"
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="."]
+position = Vector2(863, 358)
+scale = Vector2(27.239, 26.517)
+shape = SubResource("RectangleShape2D_ol2tr")
+action = "Right"
 
 [node name="PointsIcon" type="Sprite2D" parent="."]
 position = Vector2(112, 120)
@@ -451,6 +467,7 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_m1opp")
 
 [node name="Points" type="Label" parent="."]
+layout_mode = 0
 offset_left = 171.0
 offset_top = 76.0
 offset_right = 211.0
@@ -460,6 +477,7 @@ text = "0"
 label_settings = SubResource("LabelSettings_ycqwl")
 
 [node name="Points_Time" type="Label" parent="."]
+layout_mode = 0
 offset_left = 171.0
 offset_top = 166.0
 offset_right = 211.0

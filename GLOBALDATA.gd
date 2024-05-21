@@ -1,7 +1,8 @@
 extends Node
 
-var Save_File = "user://GSavedFile.save"
+var Save_File = "user://MainFile.save"
 
+#Saved_Variables
 var TotalStars : int
 var Best_Score : int
 var Best_Stars : int
@@ -9,6 +10,9 @@ var Antennae_Using : bool
 var Hats : Array
 var FaceI : Array
 var SoundsData : Vector3
+
+#Not Saved Variables
+var Paused : bool = false
 
 func _ready():
 	load_files()

@@ -18,7 +18,6 @@ func _process(delta):
 		$Sprite2D_No_Ant.show()
 	
 	if GLOBALDATA.Hats.has(2):
-		$Hats.show()
 		var Hat_Index = GLOBALDATA.Hats.find(2)
 		match Hat_Index:
 			0:
@@ -45,11 +44,11 @@ func _process(delta):
 				Main_Skin_Frame.x = 36
 			11: 
 				Main_Skin_Frame.x = 38
+		$Hats.show()
 	else:
 		$Hats.hide()
 	
 	if GLOBALDATA.FaceI.has(2):
-		$FaceI.show()
 		var FaceI_Index = GLOBALDATA.FaceI.find(2)
 		match FaceI_Index:
 			0:
@@ -72,6 +71,7 @@ func _process(delta):
 				Main_Skin_Frame.y = 40
 			9:
 				Main_Skin_Frame.y = 42
+		$FaceI.show() 
 	else:
 		$FaceI.hide()
 
@@ -98,3 +98,7 @@ func Show_Side_As(num):
 func Set_Skin_Direction(direct):
 	$Hats.frame = direct.x
 	$FaceI.frame = direct.y
+
+func Change_Image():
+	Set_Skin_Direction(Main_Skin_Frame)
+

@@ -795,7 +795,7 @@ script = ExtResource("3_nf6pf")
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 333.0
-offset_top = 181.0
+offset_top = 147.0
 offset_right = 749.0
 offset_bottom = 611.0
 script = ExtResource("2_j610g")
@@ -825,21 +825,23 @@ Blender - 3D Models, Background
 Sprite Sheet Maker - Spritesheets
 Godot - Game Engine
 LMMS - Music
-Kenney - Sound Effects"
+Kenney - Sound Effects
+PobreMiGatito - Star Playtester"
 horizontal_alignment = 1
 
 [node name="Button_Return7" type="Button" parent="ItemList7"]
 layout_mode = 0
 offset_left = 144.0
-offset_top = 345.0
+offset_top = 377.0
 offset_right = 257.0
-offset_bottom = 376.0
+offset_bottom = 408.0
 scale = Vector2(2.23, 2.23)
 pivot_offset = Vector2(56, 15)
 text = "Return"
 script = ExtResource("3_nf6pf")
 
 [node name="ItemList8" type="ItemList" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 363.0
 offset_top = 156.0

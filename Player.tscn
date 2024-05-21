@@ -15,10 +15,6 @@
 [ext_resource type="AudioStream" uid="uid://nc4qwmka3n8n" path="res://SoundEffects/spaceTrash4.ogg" id="13_prive"]
 [ext_resource type="AudioStream" uid="uid://c3q0ry3i2us4y" path="res://SoundEffects/spaceTrash5.ogg" id="14_ggacc"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_584s8"]
-radius = 23.8213
-height = 55.5831
-
 [sub_resource type="Animation" id="Animation_hco4v"]
 resource_name = "Failed"
 length = 0.45
@@ -185,6 +181,10 @@ _data = {
 "RESET": SubResource("Animation_ovbl7")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_584s8"]
+radius = 23.8213
+height = 63.5514
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_aaekp"]
 playback_mode = 1
 streams_count = 4
@@ -212,10 +212,6 @@ stream_4/weight = 1.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a2qby")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2.015, 2.015)
-shape = SubResource("CapsuleShape2D_584s8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -255,6 +251,10 @@ texture = ExtResource("4_o5xea")
 hframes = 7
 vframes = 7
 frame = 43
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.605, 1.605)
+shape = SubResource("CapsuleShape2D_584s8")
 
 [node name="Jump_Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7dbpt")

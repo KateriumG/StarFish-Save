@@ -2,16 +2,21 @@ extends Button
 
 var Normal_Size : Vector2
 var Focus_Size : Vector2
+var Disabled_Focus_Size : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Normal_Size = scale
 	Focus_Size = scale * 1.28
+	Disabled_Focus_Size = scale * 1.14
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if has_focus() and disabled == false:
-		scale = lerp(scale, Focus_Size, 0.05)
+		scale = lerp(scale, Focus_Size, 0.07)
+	elif has_focus() and disabled == true:
+		scale = lerp(scale,Disabled_Focus_Size, 0.07)
 	else:
 		scale = lerp(scale, Normal_Size, 0.05)
 

@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm8a8tjkvxu6k"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_xo7ru"]
+[ext_resource type="AudioStream" uid="uid://dynsl1yxdu50s" path="res://SoundEffects/lowRandom.ogg" id="2_8gixe"]
+[ext_resource type="Script" path="res://Button_Script.gd" id="2_n5gm0"]
+
+[node name="Pause_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xo7ru")
+
+[node name="Back" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Front" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 76.0
+offset_right = 995.0
+offset_bottom = 546.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 87.0
+offset_right = 431.0
+offset_bottom = 112.0
+scale = Vector2(5.005, 5.005)
+text = "Pause Menu"
+horizontal_alignment = 1
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 324.0
+offset_top = 87.0
+offset_right = 364.0
+offset_bottom = 127.0
+
+[node name="Button_Pause" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 226.515
+offset_top = 195.877
+offset_right = 317.515
+offset_bottom = 226.877
+scale = Vector2(2.92, 2.92)
+pivot_offset = Vector2(45.06, 15.04)
+text = "UnPause"
+script = ExtResource("2_n5gm0")
+
+[node name="Button_Quit" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 333.0
+offset_right = 318.0
+offset_bottom = 364.0
+scale = Vector2(2.92, 2.92)
+pivot_offset = Vector2(45.06, 15.04)
+text = "Quit"
+script = ExtResource("2_n5gm0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8gixe")
+bus = &"SFX"
+
+[connection signal="pressed" from="Buttons/Button_Pause" to="." method="_on_button_pause_pressed"]
+[connection signal="pressed" from="Buttons/Button_Quit" to="." method="_on_button_quit_pressed"]

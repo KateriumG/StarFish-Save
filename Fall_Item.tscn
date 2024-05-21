@@ -547,19 +547,17 @@ animations = [{
 }]
 
 [node name="Fall_Item" type="Area2D"]
-position = Vector2(-8, 976)
 rotation = 3.14159
 script = ExtResource("1_70o1x")
 
 [node name="Good_Collision" type="CollisionShape2D" parent="."]
-scale = Vector2(0.65, 0.65)
+scale = Vector2(1.25, 1.25)
 shape = SubResource("CircleShape2D_bc3iq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_s4qbl")
-animation = &"Normal_Meteorite"
-offset = Vector2(0, 75)
+animation = &"End_Star"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
