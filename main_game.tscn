@@ -37,6 +37,14 @@ stream = ExtResource("6_ggq1h")
 autoplay = true
 bus = &"Music"
 
+[node name="Button_Pause" type="Button" parent="."]
+offset_left = 987.0
+offset_top = 19.0
+offset_right = 1042.0
+offset_bottom = 50.0
+scale = Vector2(2.365, 2.365)
+text = "Pause"
+
 [connection signal="Close_Screen" from="Player" to="Pause_Menu" method="_on_player_close_screen"]
 [connection signal="Close_Screen" from="Player" to="UI" method="_on_player_close_screen"]
 [connection signal="Animation_Finish_End" from="UI" to="." method="_on_ui_animation_finish_end"]
@@ -44,3 +52,4 @@ bus = &"Music"
 [connection signal="Restart_game" from="UI" to="." method="_on_ui_restart_game"]
 [connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Points_Timer" to="." method="_on_points_timer_timeout"]
+[connection signal="pressed" from="Button_Pause" to="." method="_on_button_pause_pressed"]

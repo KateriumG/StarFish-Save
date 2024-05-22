@@ -133,7 +133,7 @@ func _on_button_settings_pressed():
 func _on_button_reset_pressed():
 	GLOBALDATA.Best_Score = 0
 	GLOBALDATA.Best_Stars = 0
-	GLOBALDATA.TotalStars = 0
+	GLOBALDATA.TotalStars = 200
 	GLOBALDATA.Hats = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
 	GLOBALDATA.FaceI = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
 	GLOBALDATA.save()
@@ -306,7 +306,7 @@ func _on_no_face_i_pressed():
 		var repeated = GLOBALDATA.FaceI.find(2)
 		GLOBALDATA.FaceI[repeated] = 1
 	GLOBALDATA.save()
-	Check_Hats_On()
+	Check_FaceI_On()
 	$AudioStreamPlayer2.play()
 
 func _on_face_i_0_pressed():

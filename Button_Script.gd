@@ -55,4 +55,3 @@ func FaceI_Is_Used(num):
 				modulate.a = 2
 			else:
 				modulate.a = 1
-

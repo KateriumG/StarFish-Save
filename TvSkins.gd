@@ -17,6 +17,33 @@ func _process(delta):
 		$Sprite2D.hide()
 		$Sprite2D_No_Ant.show()
 	
+	Change_Image()
+
+func Go_In():
+	position = lerp(position, $"..".TV_Show_Position, 0.05)
+
+func GO_Out():
+	position = lerp(position, $"..".TV_Hide_Position, 0.05)
+
+func _on_tv_timer_timeout():
+	Is_Right = not Is_Right == true
+	if Is_Right == true:
+		Show_Side_As(32)
+		Set_Skin_Direction(Main_Skin_Frame + Vector2(1, 1))
+	else:
+		Show_Side_As(31)
+		Set_Skin_Direction(Main_Skin_Frame)
+
+
+func Show_Side_As(num):
+	$Sprite2D.frame = num
+	$Sprite2D_No_Ant.frame = num
+
+func Set_Skin_Direction(direct):
+	$Hats.frame = direct.x
+	$FaceI.frame = direct.y
+
+func Change_Image():
 	if GLOBALDATA.Hats.has(2):
 		var Hat_Index = GLOBALDATA.Hats.find(2)
 		match Hat_Index:
@@ -74,31 +101,8 @@ func _process(delta):
 		$FaceI.show() 
 	else:
 		$FaceI.hide()
-
-func Go_In():
-	position = lerp(position, $"..".TV_Show_Position, 0.05)
-
-func GO_Out():
-	position = lerp(position, $"..".TV_Hide_Position, 0.05)
-
-func _on_tv_timer_timeout():
-	Is_Right = not Is_Right == true
 	if Is_Right == true:
-		Show_Side_As(32)
 		Set_Skin_Direction(Main_Skin_Frame + Vector2(1, 1))
 	else:
-		Show_Side_As(31)
 		Set_Skin_Direction(Main_Skin_Frame)
-
-
-func Show_Side_As(num):
-	$Sprite2D.frame = num
-	$Sprite2D_No_Ant.frame = num
-
-func Set_Skin_Direction(direct):
-	$Hats.frame = direct.x
-	$FaceI.frame = direct.y
-
-func Change_Image():
-	Set_Skin_Direction(Main_Skin_Frame)
 

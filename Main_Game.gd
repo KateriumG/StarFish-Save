@@ -10,7 +10,12 @@ var Difficulty = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if OS.get_name() == "Android" or OS.get_name() == "i0S":
+		$Button_Pause.show()
+		$Button_Pause.disabled = false
+	else:
+		$Button_Pause.hide()
+		$Button_Pause.disabled = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,3 +62,6 @@ func _on_points_timer_timeout():
 			Difficulty = 2
 		if TPoints > 440:
 			Difficulty = 3
+
+func _on_button_pause_pressed():
+	$Pause_Menu.Pause_The_Game()

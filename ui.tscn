@@ -445,14 +445,14 @@ anchors_preset = 0
 script = ExtResource("1_mdhj3")
 
 [node name="TouchScreenButton_Left" type="TouchScreenButton" parent="."]
-position = Vector2(292, 358)
-scale = Vector2(27.239, 26.517)
+position = Vector2(286, 369)
+scale = Vector2(27.219, 25.207)
 shape = SubResource("RectangleShape2D_ol2tr")
 action = "Left"
 
 [node name="TouchScreenButton_Right" type="TouchScreenButton" parent="."]
-position = Vector2(863, 358)
-scale = Vector2(27.239, 26.517)
+position = Vector2(882, 369)
+scale = Vector2(27.219, 25.207)
 shape = SubResource("RectangleShape2D_ol2tr")
 action = "Right"
 

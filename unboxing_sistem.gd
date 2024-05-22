@@ -64,8 +64,7 @@ func _on_use_button_pressed():
 		
 		GLOBALDATA.FaceI[skin_received] = 2
 	$"../TvSkins".Change_Image()
-	GLOBALDATA.save()
-	hide()
+	Reload_Cutscene()
 
 func _on_leave_button_pressed():
 	$AudioStreamPlayer.play()
@@ -74,5 +73,13 @@ func _on_leave_button_pressed():
 	else:
 		GLOBALDATA.FaceI[skin_received] = 1
 			
+	Reload_Cutscene()
+
+func Reload_Cutscene():
 	GLOBALDATA.save()
 	hide()
+	$Buttons.hide()
+	already_pressed = false
+	is_a_hat = 0
+	skin_received = 0
+	

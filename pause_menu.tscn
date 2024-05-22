@@ -50,7 +50,7 @@ offset_right = 317.515
 offset_bottom = 226.877
 scale = Vector2(2.92, 2.92)
 pivot_offset = Vector2(45.06, 15.04)
-text = "UnPause"
+text = "Resume"
 script = ExtResource("2_n5gm0")
 
 [node name="Button_Quit" type="Button" parent="Buttons"]
