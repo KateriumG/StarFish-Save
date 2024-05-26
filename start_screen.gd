@@ -30,33 +30,41 @@ func _process(delta):
 		match Context[1]:
 			"ItemList":
 				$ItemList.shade_in(Context[1])
-				$ItemList/Button_Continue.grab_focus()
+				if OS.get_name() != "Android" or OS.get_name() != "i0S":
+					$ItemList/Button_Continue.grab_focus()
 			"ItemList2":
 				$ItemList2.shade_in(Context[1])
-				$ItemList2/Button_Play.grab_focus()
+				if OS.get_name() != "Android" or OS.get_name() != "i0S":
+					$ItemList2/Button_Play.grab_focus()
 			"ItemList3":
 				Antennae_Update()
 				$ItemList3.shade_in(Context[1])
-				$ItemList3/Ant.grab_focus()
+				if OS.get_name() != "Android" or OS.get_name() != "i0S":
+					$ItemList3/Ant.grab_focus()
 				$TvSkins.Go_In()
 				$Animation_SC.Change_Size(Vector2(0.5, 0.5))
 			"ItemList4":
 				$ItemList4.shade_in(Context[1])
-				$ItemList4/Button_Sound.grab_focus()
+				if OS.get_name() != "Android" or OS.get_name() != "i0S":
+					$ItemList4/Button_Sound.grab_focus()
 			"ItemList5":
 				$ItemList5.shade_in(Context[1])
-				$ItemList5/No_Hat.grab_focus()
+				if OS.get_name() != "Android" or OS.get_name() != "i0S":
+					$ItemList5/No_Hat.grab_focus()
 				Check_Hats_On()
 			"ItemList6":
 				$ItemList6.shade_in(Context[1])
-				$ItemList6/No_FaceI.grab_focus()
+				if OS.get_name() != "Android" or OS.get_name() != "i0S":
+					$ItemList6/No_FaceI.grab_focus()
 				Check_FaceI_On()
 			"ItemList7":
 				$ItemList7.shade_in(Context[1])
-				$ItemList7/Button_Return7.grab_focus()
+				if OS.get_name() != "Android" or OS.get_name() != "i0S":
+					$ItemList7/Button_Return7.grab_focus()
 			"ItemList8":
 				$ItemList8.shade_in(Context[1])
-				$ItemList8/Master_Panel/Volume_Slider.grab_focus()
+				if OS.get_name() != "Android" or OS.get_name() != "i0S":
+					$ItemList8/Master_Panel/Volume_Slider.grab_focus()
 		
 	if Context[3] != null:
 		match Context[3]:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c81wq7hntgnk8"]
+[gd_scene load_steps=48 format=3 uid="uid://c81wq7hntgnk8"]
 
 [ext_resource type="Script" path="res://start_screen.gd" id="1_2bnr8"]
 [ext_resource type="Texture2D" uid="uid://bjiig3ejrg7no" path="res://Main_A/PointsIcon.png" id="2_elph1"]
@@ -67,6 +67,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0qh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6ojt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80cqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12q26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkad1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54ov6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b7s6"]
 
 [node name="Start_Screen" type="Node2D"]
 script = ExtResource("1_2bnr8")
@@ -396,6 +406,7 @@ scale = Vector2(6.075, 1.5)
 shape = SubResource("RectangleShape2D_y3v32")
 
 [node name="ItemList5" type="ItemList" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 160.0
 offset_top = 150.0
@@ -710,6 +721,11 @@ hframes = 7
 vframes = 7
 frame = 38
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList5/Hat11"]
+position = Vector2(954.546, 550)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_v6ojt")
+
 [node name="Button_Continue2" type="Button" parent="ItemList5"]
 layout_mode = 0
 offset_left = 220.0
@@ -722,6 +738,11 @@ text = "Continue
 "
 script = ExtResource("3_nf6pf")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList5/Button_Continue2"]
+position = Vector2(71.3526, 15.5602)
+scale = Vector2(7.04, 1.5)
+shape = SubResource("RectangleShape2D_v6ojt")
+
 [node name="Button_Return4" type="Button" parent="ItemList5"]
 layout_mode = 0
 offset_left = 158.0
@@ -732,6 +753,11 @@ scale = Vector2(1.835, 1.835)
 pivot_offset = Vector2(112.575, 16.195)
 text = "Return"
 script = ExtResource("3_nf6pf")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList5/Button_Return4"]
+position = Vector2(100.273, 15.5438)
+scale = Vector2(9.788, 1.459)
+shape = SubResource("RectangleShape2D_v6ojt")
 
 [node name="ItemList6" type="ItemList" parent="."]
 visible = false
@@ -762,6 +788,11 @@ pivot_offset = Vector2(1000, 550)
 text = " "
 script = ExtResource("3_nf6pf")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/No_FaceI"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
+
 [node name="FaceI0" type="Button" parent="ItemList6"]
 layout_mode = 0
 offset_left = -811.0
@@ -780,6 +811,11 @@ texture = ExtResource("9_pgh3p")
 hframes = 7
 vframes = 7
 frame = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI0"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
 
 [node name="FaceI1" type="Button" parent="ItemList6"]
 layout_mode = 0
@@ -800,6 +836,11 @@ hframes = 7
 vframes = 7
 frame = 6
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI1"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
+
 [node name="FaceI2" type="Button" parent="ItemList6"]
 layout_mode = 0
 offset_left = -601.0
@@ -818,6 +859,11 @@ texture = ExtResource("9_pgh3p")
 hframes = 7
 vframes = 7
 frame = 16
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI2"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
 
 [node name="FaceI3" type="Button" parent="ItemList6"]
 layout_mode = 0
@@ -838,6 +884,11 @@ hframes = 7
 vframes = 7
 frame = 24
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI3"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
+
 [node name="FaceI4" type="Button" parent="ItemList6"]
 layout_mode = 0
 offset_left = -811.0
@@ -856,6 +907,11 @@ texture = ExtResource("9_pgh3p")
 hframes = 7
 vframes = 7
 frame = 26
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI4"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
 
 [node name="FaceI5" type="Button" parent="ItemList6"]
 layout_mode = 0
@@ -876,6 +932,11 @@ hframes = 7
 vframes = 7
 frame = 28
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI5"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
+
 [node name="FaceI6" type="Button" parent="ItemList6"]
 layout_mode = 0
 offset_left = -599.0
@@ -894,6 +955,11 @@ texture = ExtResource("9_pgh3p")
 hframes = 7
 vframes = 7
 frame = 30
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI6"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
 
 [node name="FaceI7" type="Button" parent="ItemList6"]
 layout_mode = 0
@@ -914,6 +980,11 @@ hframes = 7
 vframes = 7
 frame = 32
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI7"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
+
 [node name="FaceI8" type="Button" parent="ItemList6"]
 layout_mode = 0
 offset_left = -813.0
@@ -932,6 +1003,11 @@ texture = ExtResource("9_pgh3p")
 hframes = 7
 vframes = 7
 frame = 40
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI8"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
 
 [node name="FaceI9" type="Button" parent="ItemList6"]
 layout_mode = 0
@@ -952,6 +1028,11 @@ hframes = 7
 vframes = 7
 frame = 42
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/FaceI9"]
+position = Vector2(954.545, 530)
+scale = Vector2(94, 52)
+shape = SubResource("RectangleShape2D_80cqd")
+
 [node name="Button_Return5" type="Button" parent="ItemList6"]
 layout_mode = 0
 offset_left = 308.0
@@ -964,6 +1045,11 @@ text = "Return
 "
 script = ExtResource("3_nf6pf")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/Button_Return5"]
+position = Vector2(47.6804, 15.5216)
+scale = Vector2(4.715, 1.5)
+shape = SubResource("RectangleShape2D_12q26")
+
 [node name="Button_Exit" type="Button" parent="ItemList6"]
 layout_mode = 0
 offset_left = 239.0
@@ -974,6 +1060,11 @@ scale = Vector2(1.835, 1.835)
 pivot_offset = Vector2(82.835, 16.195)
 text = "Exit"
 script = ExtResource("3_nf6pf")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList6/Button_Exit"]
+position = Vector2(72.0257, 14.9988)
+scale = Vector2(7.205, 1.5)
+shape = SubResource("RectangleShape2D_dkad1")
 
 [node name="ItemList7" type="ItemList" parent="."]
 visible = false
@@ -1024,8 +1115,12 @@ pivot_offset = Vector2(56, 15)
 text = "Return"
 script = ExtResource("3_nf6pf")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList7/Button_Return7"]
+position = Vector2(56.8969, 15.8969)
+scale = Vector2(5.585, 1.5)
+shape = SubResource("RectangleShape2D_54ov6")
+
 [node name="ItemList8" type="ItemList" parent="."]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 363.0
 offset_top = 156.0
@@ -1128,6 +1223,11 @@ pivot_offset = Vector2(65, 15)
 text = "Return"
 script = ExtResource("3_nf6pf")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ItemList8/Button_Return8"]
+position = Vector2(60.9641, 15.4484)
+scale = Vector2(6.125, 1.5)
+shape = SubResource("RectangleShape2D_2b7s6")
+
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(357, 64)
 scale = Vector2(0.3, 0.3)
@@ -1210,21 +1310,39 @@ bus = &"SFX"
 [connection signal="pressed" from="ItemList5/Hat10" to="." method="_on_hat_10_pressed"]
 [connection signal="pressed" from="ItemList5/Hat10/TouchScreenButton" to="ItemList5/Hat10" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList5/Hat11" to="." method="_on_hat_11_pressed"]
+[connection signal="pressed" from="ItemList5/Hat11/TouchScreenButton" to="ItemList5/Hat11" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList5/Button_Continue2" to="." method="_on_button_continue_2_pressed"]
+[connection signal="pressed" from="ItemList5/Button_Continue2/TouchScreenButton" to="ItemList5/Button_Continue2" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList5/Button_Return4" to="." method="_on_button_return_4_pressed"]
+[connection signal="pressed" from="ItemList5/Button_Return4/TouchScreenButton" to="ItemList5/Button_Return4" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/No_FaceI" to="." method="_on_no_face_i_pressed"]
+[connection signal="pressed" from="ItemList6/No_FaceI/TouchScreenButton" to="ItemList6/No_FaceI" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI0" to="." method="_on_face_i_0_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI0/TouchScreenButton" to="ItemList6/FaceI0" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI1" to="." method="_on_face_i_1_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI1/TouchScreenButton" to="ItemList6/FaceI1" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI2" to="." method="_on_face_i_2_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI2/TouchScreenButton" to="ItemList6/FaceI2" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI3" to="." method="_on_face_i_3_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI3/TouchScreenButton" to="ItemList6/FaceI3" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI4" to="." method="_on_face_i_4_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI4/TouchScreenButton" to="ItemList6/FaceI4" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI5" to="." method="_on_face_i_5_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI5/TouchScreenButton" to="ItemList6/FaceI5" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI6" to="." method="_on_face_i_6_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI6/TouchScreenButton" to="ItemList6/FaceI6" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI7" to="." method="_on_face_i_7_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI7/TouchScreenButton" to="ItemList6/FaceI7" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI8" to="." method="_on_face_i_8_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI8/TouchScreenButton" to="ItemList6/FaceI8" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/FaceI9" to="." method="_on_face_i_9_pressed"]
+[connection signal="pressed" from="ItemList6/FaceI9/TouchScreenButton" to="ItemList6/FaceI9" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/Button_Return5" to="." method="_on_button_return_5_pressed"]
+[connection signal="pressed" from="ItemList6/Button_Return5/TouchScreenButton" to="ItemList6/Button_Return5" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList6/Button_Exit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="ItemList6/Button_Exit/TouchScreenButton" to="ItemList6/Button_Exit" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList7/Button_Return7" to="." method="_on_button_return_7_pressed"]
+[connection signal="pressed" from="ItemList7/Button_Return7/TouchScreenButton" to="ItemList7/Button_Return7" method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ItemList8/Button_Return8" to="." method="_on_button_return_8_pressed"]
+[connection signal="pressed" from="ItemList8/Button_Return8/TouchScreenButton" to="ItemList8/Button_Return8" method="_on_touch_screen_button_pressed"]
 [connection signal="hidden" from="Unboxing_Sistem" to="." method="_on_unboxing_sistem_hidden"]
