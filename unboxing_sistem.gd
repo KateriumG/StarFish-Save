@@ -1,5 +1,7 @@
 extends Node2D
 
+signal Reload_Skins
+
 var already_pressed = false
 
 var skin_received = 0
@@ -82,4 +84,7 @@ func Reload_Cutscene():
 	already_pressed = false
 	is_a_hat = 0
 	skin_received = 0
+	$Box.show()
+	$AnimationPlayer.play("Idle")
+	emit_signal("Reload_Skins")
 	

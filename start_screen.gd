@@ -12,6 +12,7 @@ var Context = [1, "ItemList", 1, null]
 var var_ = 0
 
 func _ready():
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	$ItemList.show()
 	$ItemList2.show()
 	$ItemList3.show()
@@ -133,7 +134,7 @@ func _on_button_settings_pressed():
 func _on_button_reset_pressed():
 	GLOBALDATA.Best_Score = 0
 	GLOBALDATA.Best_Stars = 0
-	GLOBALDATA.TotalStars = 200
+	GLOBALDATA.TotalStars = 0
 	GLOBALDATA.Hats = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
 	GLOBALDATA.FaceI = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
 	GLOBALDATA.save()
@@ -160,6 +161,7 @@ func _on_buy_box_pressed():
 		$ItemList3/TotalIcon/PointsIcon/Label.text = str(GLOBALDATA.TotalStars)
 		GLOBALDATA.save()
 		$Unboxing_Sistem.show()
+		$ItemList3/Buy_Box.release_focus()
 		$AudioStreamPlayer2.play()
 
 func _on_unboxing_sistem_hidden():
@@ -366,3 +368,4 @@ func _on_button_return_8_pressed():
 	$ItemList4.modulate.a = 0
 	set_process(true)
 	$AudioStreamPlayer2.play()
+

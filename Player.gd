@@ -139,7 +139,7 @@ func _physics_process(delta):
 	elif directional < 0:
 		rotation_degrees = (velocity.y / 15 * directional) - 90
 	
-	if position.y > 658 or position.y < -10 or position.x > 1162 or position.x < -10:
+	if position.y > 678 or position.y < -30 or position.x > 1182 or position.x < -30:
 		Game_Lost = true 
 		$GameOver_Audio.play()
 		set_physics_process(false)

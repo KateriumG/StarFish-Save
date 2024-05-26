@@ -55,3 +55,7 @@ func FaceI_Is_Used(num):
 				modulate.a = 2
 			else:
 				modulate.a = 1
+
+func _on_touch_screen_button_pressed():
+	grab_focus()
+	emit_signal("pressed")

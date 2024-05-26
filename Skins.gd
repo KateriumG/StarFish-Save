@@ -67,3 +67,9 @@ func Select_Image():
 			9:
 				frame = 42
 		offset.y = 10
+
+func _on_unboxing_sistem_reload_skins():
+	start_growing = false
+	scale = Vector2(0.05, 0.05)
+	$Label.text = ""
+	hide()
