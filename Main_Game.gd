@@ -64,4 +64,5 @@ func _on_points_timer_timeout():
 			Difficulty = 3
 
 func _on_button_pause_pressed():
-	$Pause_Menu.Pause_The_Game()
+	if $Player.is_physics_processing():
+		$Pause_Menu.Pause_The_Game()

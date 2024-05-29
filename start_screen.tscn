@@ -1121,6 +1121,7 @@ scale = Vector2(5.585, 1.5)
 shape = SubResource("RectangleShape2D_54ov6")
 
 [node name="ItemList8" type="ItemList" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 363.0
 offset_top = 156.0

@@ -57,5 +57,11 @@ func FaceI_Is_Used(num):
 				modulate.a = 1
 
 func _on_touch_screen_button_pressed():
-	grab_focus()
-	emit_signal("pressed")
+	if get_parent().modulate.a > 0.9:
+		if name.contains("Hat") or name.contains("FaceI"):
+			if disabled == false:
+				grab_focus()
+				emit_signal("pressed")
+		else:
+			grab_focus()
+			emit_signal("pressed")

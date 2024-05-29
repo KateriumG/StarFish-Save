@@ -376,4 +376,3 @@ func _on_button_return_8_pressed():
 	$ItemList4.modulate.a = 0
 	set_process(true)
 	$AudioStreamPlayer2.play()
-
